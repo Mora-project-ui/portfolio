@@ -1,0 +1,1396 @@
+============================================================
+HTML + CSS LEARNING DIARY
+Portfolio Website - Mora Project UI
+Tanggal: 18 September 2026
+============================================================
+
+Hari ini aku mulai memahami dasar HTML dan CSS melalui project
+website portfolio sendiri menggunakan GitHub Pages.
+
+Target belajar hari ini bukan menghafalkan semua tag HTML,
+tetapi memahami fungsi setiap bagian dan mengetahui apa yang
+terjadi ketika sebuah kode diubah atau dihapus.
+
+Prinsip belajar:
+
+"Jangan cuma hafal kode. Pahami hubungan antara kode dan hasil
+yang muncul di website."
+
+============================================================
+1. <!DOCTYPE html>
+============================================================
+
+Kode:
+
+<!DOCTYPE html>
+
+Kegunaan:
+
+Memberi tahu browser bahwa dokumen menggunakan HTML5.
+
+Tujuannya agar browser menggunakan standard mode HTML modern.
+
+Kode ini bukan sebuah tag HTML biasa, tetapi deklarasi tipe
+dokumen.
+
+Eksperimen:
+
+- Hapus <!DOCTYPE html>
+- Commit perubahan
+- Lihat apakah tampilan website berubah
+- Pasang kembali
+
+Pada browser modern mungkin tidak terlihat perbedaannya,
+tetapi deklarasi ini tetap penting untuk memastikan browser
+menggunakan standard mode.
+
+
+============================================================
+2. <html lang="en">
+============================================================
+
+Kode:
+
+<html lang="en">
+
+Elemen <html> adalah pembungkus utama seluruh dokumen HTML.
+
+Semua isi halaman berada di dalam:
+
+<html>
+    ...
+</html>
+
+Atribut:
+
+lang="en"
+
+Memberi tahu browser dan teknologi lain bahwa bahasa utama
+dokumen adalah Bahasa Inggris.
+
+Jika website menggunakan Bahasa Indonesia:
+
+<html lang="id">
+
+Jadi:
+
+lang="en"
+= bahasa utama halaman adalah English.
+
+lang="id"
+= bahasa utama halaman adalah Bahasa Indonesia.
+
+Atribut lang bukan alat untuk menerjemahkan halaman.
+
+Fungsinya memberikan informasi bahasa kepada browser,
+screen reader, search engine, dan teknologi lainnya.
+
+Contoh halaman utama Bahasa Indonesia tetapi ada bagian
+Bahasa Inggris:
+
+<html lang="id">
+
+    <p>Halo, saya Rama.</p>
+
+    <p lang="en">
+        I enjoy experimenting with Linux.
+    </p>
+
+</html>
+
+
+============================================================
+3. <head>
+============================================================
+
+Kode:
+
+<head>
+
+Bagian <head> berisi informasi dan pengaturan tentang halaman.
+
+Biasanya tidak menjadi konten utama yang terlihat langsung
+oleh pengunjung.
+
+Contohnya:
+
+<meta>
+<title>
+<link>
+
+Gampangnya:
+
+<head>
+= informasi dan pengaturan halaman
+
+<body>
+= isi halaman yang dilihat pengunjung
+
+
+============================================================
+4. <meta charset="UTF-8">
+============================================================
+
+Kode:
+
+<meta charset="UTF-8">
+
+Menentukan encoding karakter yang digunakan halaman.
+
+UTF-8 memungkinkan halaman memahami banyak jenis karakter,
+misalnya:
+
+é
+©
+→
+🐧
+日本語
+العربية
+
+Kalau encoding tidak sesuai, karakter tertentu bisa
+ditampilkan secara aneh.
+
+Eksperimen:
+
+- Hapus <meta charset="UTF-8">
+- Commit
+- Lihat hasilnya
+- Pasang kembali
+
+Browser modern mungkin tetap menampilkan halaman dengan benar,
+tetapi UTF-8 tetap sebaiknya digunakan.
+
+
+============================================================
+5. Viewport
+============================================================
+
+Kode:
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+Ini penting untuk tampilan responsive, terutama di perangkat
+mobile.
+
+Bagian:
+
+width=device-width
+
+Artinya lebar halaman mengikuti lebar layar perangkat.
+
+Contoh:
+
+Laptop -> layar lebar
+HP     -> layar lebih kecil
+
+Bagian:
+
+initial-scale=1.0
+
+Menentukan zoom awal halaman sebesar 100%.
+
+Tanpa viewport yang benar, website yang terlihat bagus di
+desktop bisa terlihat aneh ketika dibuka melalui HP.
+
+
+============================================================
+6. <title>
+============================================================
+
+Kode:
+
+<title>Mohammad Rama al-jannah</title>
+
+Menentukan judul halaman yang muncul pada browser tab.
+
+Ini berbeda dengan:
+
+<h1>Mohammad Rama al-jannah</h1>
+
+<title>
+= judul browser/tab
+
+<h1>
+= judul utama yang terlihat di halaman
+
+Eksperimen:
+
+Ubah:
+
+<title>Mohammad Rama al-jannah</title>
+
+menjadi:
+
+<title>Mora Portfolio</title>
+
+Kemudian lihat perubahan pada tab browser.
+
+
+============================================================
+7. Menghubungkan HTML dengan CSS
+============================================================
+
+Kode:
+
+<link rel="stylesheet" href="./style.css">
+
+Ini adalah salah satu bagian penting dari project.
+
+HTML dan CSS berada di file yang berbeda.
+
+index.html
+    |
+    | <link>
+    v
+style.css
+
+Bagian:
+
+rel="stylesheet"
+
+Memberi tahu browser bahwa file yang dihubungkan adalah
+stylesheet/CSS.
+
+Bagian:
+
+href="./style.css"
+
+Menentukan lokasi file CSS.
+
+"./"
+
+berarti dari folder tempat file HTML berada.
+
+Struktur project:
+
+portfolio/
+├── index.html
+├── style.css
+├── script.js
+└── assets/
+
+Maka:
+
+./style.css
+
+berarti:
+
+portfolio/style.css
+
+Kalau lokasi atau nama file salah, CSS tidak akan diterapkan.
+
+
+============================================================
+8. <body>
+============================================================
+
+Kode:
+
+<body>
+
+Bagian <body> berisi konten utama yang ditampilkan kepada
+pengunjung.
+
+Contohnya:
+
+- navbar
+- teks
+- gambar
+- project
+- skills
+- contact
+- footer
+
+Gampangnya:
+
+<head>
+= pengaturan/informasi halaman
+
+<body>
+= isi website
+
+
+============================================================
+9. Komentar HTML
+============================================================
+
+Kode:
+
+<!-- Navigation -->
+
+Komentar tidak ditampilkan kepada pengunjung.
+
+Komentar digunakan untuk membantu manusia memahami kode.
+
+Contoh:
+
+<!-- Navigation -->
+<header>
+
+Artinya bagian tersebut adalah bagian navigasi.
+
+Komentar boleh dihapus tanpa mengubah tampilan website.
+
+
+============================================================
+10. <header>
+============================================================
+
+Kode:
+
+<header>
+
+<header> adalah elemen semantik yang digunakan untuk bagian
+kepala/header suatu halaman atau bagian.
+
+Pada website portfolio ini, header digunakan untuk menampung
+navbar.
+
+Contoh:
+
+<header>
+    <nav>
+        ...
+    </nav>
+</header>
+
+HTML modern menyediakan elemen semantik supaya struktur
+halaman lebih jelas.
+
+Contoh:
+
+<header>
+= bagian header
+
+<nav>
+= navigasi
+
+<main>
+= konten utama
+
+<section>
+= bagian/topik halaman
+
+<article>
+= konten mandiri
+
+<footer>
+= bagian bawah halaman
+
+
+============================================================
+11. <nav>
+============================================================
+
+Kode:
+
+<nav>
+
+Menandakan bahwa bagian tersebut merupakan navigasi.
+
+Contoh:
+
+<nav>
+    <h2>Mora-project-ui</h2>
+
+    <div class="nav-links">
+        ...
+    </div>
+</nav>
+
+Navbar website berisi link:
+
+About
+Projects
+Skills
+Contact
+
+
+============================================================
+12. Heading: <h1> sampai <h6>
+============================================================
+
+HTML mempunyai heading:
+
+<h1>
+<h2>
+<h3>
+<h4>
+<h5>
+<h6>
+
+Secara umum:
+
+<h1>
+= judul utama
+
+<h2>
+= judul bagian
+
+<h3>
+= subbagian
+
+dan seterusnya.
+
+Pada portfolio:
+
+<h1>Mohammad Rama al-jannah</h1>
+
+adalah judul utama.
+
+Sedangkan:
+
+<h2>About Me</h2>
+<h2>Projects</h2>
+<h2>Skills & Tools</h2>
+<h2>Contact</h2>
+
+adalah judul bagian.
+
+Heading bukan hanya tentang ukuran font.
+
+Heading juga membentuk struktur dokumen.
+
+
+============================================================
+13. <div>
+============================================================
+
+Contoh:
+
+<div class="nav-links">
+
+<div> adalah container generik.
+
+<div> sendiri tidak mempunyai arti khusus seperti <nav>,
+<header>, atau <footer>.
+
+Fungsinya adalah mengelompokkan elemen.
+
+Contoh:
+
+<div class="nav-links">
+
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+
+</div>
+
+CSS kemudian bisa menargetkan:
+
+.nav-links {
+    ...
+}
+
+Atribut:
+
+class="nav-links"
+
+memberikan nama kelompok kepada elemen agar bisa ditargetkan
+oleh CSS atau JavaScript.
+
+
+============================================================
+14. <a> dan href
+============================================================
+
+Contoh:
+
+<a href="#about">About</a>
+
+<a>
+= anchor/link
+
+href
+= tujuan link
+
+Ada dua jenis tujuan yang digunakan dalam portfolio.
+
+Pertama:
+
+href="#about"
+
+Ini menuju bagian lain dalam halaman yang mempunyai:
+
+id="about"
+
+Contoh:
+
+<a href="#about">About</a>
+
+        |
+        v
+
+<section id="about">
+
+Tanda "#" menunjukkan bahwa tujuan tersebut adalah ID dalam
+halaman yang sama.
+
+Kedua:
+
+<a href="https://github.com/Mora-project-ui">
+
+Ini menuju website/URL lain.
+
+Jadi:
+
+#about
+= tujuan internal dalam halaman
+
+https://...
+= URL
+
+
+============================================================
+15. <main>
+============================================================
+
+Kode:
+
+<main>
+
+Menandakan konten utama dari halaman.
+
+Pada portfolio, <main> berisi:
+
+Hero
+About
+Projects
+Skills
+Contact
+
+Contohnya:
+
+<main>
+
+    <section id="hero">
+        ...
+    </section>
+
+    <section id="about">
+        ...
+    </section>
+
+    <section id="projects">
+        ...
+    </section>
+
+</main>
+
+
+============================================================
+16. <section>
+============================================================
+
+Contoh:
+
+<section id="hero">
+
+<section> digunakan untuk membagi halaman menjadi bagian/topik.
+
+Portfolio dibagi menjadi beberapa section:
+
+<section id="hero">
+<section id="about">
+<section id="projects">
+<section id="skills">
+<section id="contact">
+
+Setiap section diberi ID supaya dapat dituju oleh link atau
+ditargetkan oleh CSS.
+
+Contoh:
+
+<section id="projects">
+
+bisa dituju:
+
+<a href="#projects">Projects</a>
+
+dan bisa ditargetkan CSS:
+
+#projects {
+    ...
+}
+
+
+============================================================
+17. <img>
+============================================================
+
+Contoh:
+
+<img
+    src="./assets/RAMA-BLACK-STYLE.jpg"
+    alt="Mohammad Rama"
+    class="profile-image"
+>
+
+<img> digunakan untuk menampilkan gambar.
+
+Atribut:
+
+src
+= lokasi gambar
+
+alt
+= teks alternatif gambar
+
+class
+= nama class untuk styling atau pengelompokan
+
+
+------------------------------------------------------------
+17.1 src
+------------------------------------------------------------
+
+Kode:
+
+src="./assets/RAMA-BLACK-STYLE.jpg"
+
+Menentukan lokasi file gambar.
+
+Struktur:
+
+portfolio/
+├── index.html
+└── assets/
+    └── RAMA-BLACK-STYLE.jpg
+
+Maka:
+
+./assets/RAMA-BLACK-STYLE.jpg
+
+adalah lokasi yang benar.
+
+
+------------------------------------------------------------
+17.2 alt
+------------------------------------------------------------
+
+Kode:
+
+alt="Mohammad Rama"
+
+Alternative text atau teks alternatif.
+
+Jika gambar gagal dimuat, alt dapat membantu memberikan
+informasi mengenai gambar tersebut.
+
+Alt juga berguna untuk accessibility seperti screen reader.
+
+
+------------------------------------------------------------
+17.3 class
+------------------------------------------------------------
+
+Kode:
+
+class="profile-image"
+
+Menghubungkan elemen HTML dengan aturan CSS.
+
+HTML:
+
+<img class="profile-image">
+
+CSS:
+
+.profile-image {
+    width: 140px;
+    height: 140px;
+}
+
+Jadi HTML menentukan elemen mana yang ingin diberi style,
+sedangkan CSS menentukan bagaimana tampilannya.
+
+
+============================================================
+18. <p>
+============================================================
+
+Contoh:
+
+<p class="eyebrow">Hello, I'm</p>
+
+<p> berarti paragraph/paragraf.
+
+Digunakan untuk teks biasa atau paragraf.
+
+Contoh:
+
+<p>
+    I enjoy experimenting with Linux.
+</p>
+
+class="eyebrow"
+
+memberikan nama class agar CSS dapat menargetkan paragraf
+tersebut secara khusus.
+
+
+============================================================
+19. Hero
+============================================================
+
+Contoh:
+
+<section id="hero">
+
+Hero biasanya merupakan bagian pertama yang memperkenalkan
+website atau pemilik website.
+
+Pada portfolio:
+
+- foto profile
+- Hello, I'm
+- nama
+- deskripsi singkat
+- deskripsi mengenai minat
+
+Contohnya:
+
+<section id="hero">
+
+    <img ...>
+
+    <p class="eyebrow">Hello, I'm</p>
+
+    <h1>Mohammad Rama al-jannah</h1>
+
+    <h2>A curious Linux tinkerer from Indonesia.</h2>
+
+    <p class="hero-description">
+        ...
+    </p>
+
+</section>
+
+
+============================================================
+20. <article>
+============================================================
+
+Contoh:
+
+<article class="project-card">
+
+    <h3>Mora Project UI</h3>
+
+    <p>
+        ...
+    </p>
+
+</article>
+
+<article> digunakan untuk konten yang dapat dianggap sebagai
+unit mandiri.
+
+Dalam portfolio, setiap project merupakan satu unit.
+
+Contoh:
+
+Project A
+Project B
+Project C
+
+Masing-masing project dapat berdiri sendiri.
+
+Karena itu <article> cocok digunakan untuk project card.
+
+
+============================================================
+21. <h3> pada project
+============================================================
+
+Contoh:
+
+<h3>Mora Project UI</h3>
+
+Struktur heading project:
+
+<h1>
+    Judul utama website
+
+<h2>
+    Judul section
+
+<h3>
+    Judul project di dalam section
+
+Contoh struktur:
+
+<h1>Mohammad Rama al-jannah</h1>
+
+<h2>Projects</h2>
+
+    <h3>Mora Project UI</h3>
+    <h3>Mora App</h3>
+    <h3>TikTok HD 60fps Extension</h3>
+
+<h2>Skills & Tools</h2>
+
+<h2>Contact</h2>
+
+Jadi heading membentuk hierarki informasi.
+
+
+============================================================
+22. External Link
+============================================================
+
+Contoh:
+
+<a href="https://github.com/Mora-project-ui">
+    View on GitHub
+</a>
+
+Ini adalah link menuju website lain.
+
+Perbedaan:
+
+href="#projects"
+= menuju bagian dalam halaman sendiri
+
+href="https://github.com/..."
+= menuju URL external
+
+
+============================================================
+23. Skills
+============================================================
+
+Kode:
+
+<section id="skills">
+
+    <h2>Skills & Tools</h2>
+
+    <div class="skills-list">
+        ...
+    </div>
+
+</section>
+
+<section id="skills">
+= bagian skills
+
+.skills-list
+= container untuk seluruh badge skill
+
+
+============================================================
+24. <span>
+============================================================
+
+Contoh:
+
+<span>
+    <img src="..." alt="Linux">
+    Linux
+</span>
+
+<span> adalah container inline yang bersifat generik.
+
+Dalam portfolio ini, setiap <span> digunakan sebagai satu
+badge skill.
+
+Strukturnya:
+
+.skills-list
+|
+├── span
+|   ├── img
+|   └── Linux
+|
+├── span
+|   ├── img
+|   └── VS Code
+|
+├── span
+|   ├── img
+|   └── Git
+|
+└── ...
+
+CSS:
+
+.skills-list span {
+    display: inline-flex;
+}
+
+CSS tersebut membuat isi badge lebih mudah diatur secara
+horizontal.
+
+
+============================================================
+25. Icon Skill
+============================================================
+
+Contoh:
+
+<img
+    src="https://raw.githubusercontent.com/..."
+    alt="Kotlin"
+>
+
+Konsepnya sama seperti foto profile.
+
+Perbedaannya adalah sumber gambar.
+
+Contoh file lokal:
+
+./assets/icons/Operatingsystem/linux.svg
+
+Artinya gambar berasal dari repository portfolio sendiri.
+
+Sedangkan:
+
+https://raw.githubusercontent.com/...
+
+berarti gambar diambil melalui URL dari repository GitHub
+lain menggunakan raw file.
+
+Jadi:
+
+./assets/...
+= file lokal
+
+https://...
+= file dari internet
+
+
+============================================================
+26. Contact
+============================================================
+
+Contoh:
+
+<section id="contact">
+
+    <h2>Contact</h2>
+
+    <p>
+        You can find me on:
+    </p>
+
+    <div class="contact-links">
+        ...
+    </div>
+
+</section>
+
+Section ini digunakan untuk mengelompokkan informasi kontak
+dan social media.
+
+Contoh:
+
+GitHub
+YouTube
+Lynk
+
+
+============================================================
+27. <footer>
+============================================================
+
+Kode:
+
+<footer>
+
+    <p>© 2026 Mohammad Rama al-jannah</p>
+
+</footer>
+
+<footer> biasanya digunakan untuk bagian bawah halaman.
+
+Footer dapat berisi:
+
+- copyright
+- link
+- informasi tambahan
+- social media
+- navigasi
+
+
+============================================================
+28. Penutup Tag
+============================================================
+
+Kode:
+
+</body>
+</html>
+
+Digunakan untuk menutup:
+
+<body>
+
+dan:
+
+<html>
+
+Urutan pembukaan dan penutupan tag harus benar.
+
+Benar:
+
+<div>
+    <p>Hello</p>
+</div>
+
+Salah:
+
+<div>
+    <p>Hello</div>
+</p>
+
+HTML menggunakan struktur bertingkat seperti parent dan child.
+
+
+============================================================
+29. 5 KONSEP PALING PENTING
+============================================================
+
+Tidak perlu menghafalkan semua tag.
+
+Yang paling penting untuk dipahami:
+
+------------------------------------------------------------
+1. HTML = STRUKTUR
+------------------------------------------------------------
+
+Contoh:
+
+<section>
+    <h2>Projects</h2>
+
+    <p>
+        Daftar project saya.
+    </p>
+</section>
+
+HTML menentukan apa yang ada di halaman.
+
+
+------------------------------------------------------------
+2. CSS = TAMPILAN
+------------------------------------------------------------
+
+Contoh:
+
+section {
+    padding: 100px;
+}
+
+CSS menentukan bagaimana elemen tersebut terlihat.
+
+
+------------------------------------------------------------
+3. class = IDENTITAS KELOMPOK
+------------------------------------------------------------
+
+HTML:
+
+<span class="profile-image">
+
+CSS:
+
+.profile-image {
+    ...
+}
+
+Class biasanya digunakan ketika kita ingin memberikan style
+kepada satu atau beberapa elemen yang memiliki karakteristik
+yang sama.
+
+Satu class dapat digunakan oleh banyak elemen.
+
+
+------------------------------------------------------------
+4. id = IDENTITAS SPESIFIK
+------------------------------------------------------------
+
+HTML:
+
+<section id="projects">
+
+Bisa dituju:
+
+<a href="#projects">Projects</a>
+
+Bisa ditargetkan CSS:
+
+#projects {
+    ...
+}
+
+ID biasanya digunakan untuk identitas unik sebuah elemen.
+
+
+------------------------------------------------------------
+5. src dan href
+------------------------------------------------------------
+
+<img src="./assets/linux.svg">
+
+src
+= mengambil/menentukan lokasi file yang digunakan oleh elemen.
+
+Sedangkan:
+
+<a href="https://github.com/...">
+
+href
+= menentukan tujuan link.
+
+Gampangnya:
+
+src
+= "Ambil dari mana?"
+
+href
+= "Pergi ke mana?"
+
+
+============================================================
+30. HUBUNGAN HTML DAN CSS
+============================================================
+
+Contoh:
+
+HTML:
+
+<img class="profile-image">
+
+CSS:
+
+.profile-image {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+
+HTML mengatakan:
+
+"Ini adalah gambar profile."
+
+CSS mengatakan:
+
+"Buat gambar profile ini berukuran 140x140,
+berbentuk bulat, dan memiliki style tertentu."
+
+Jadi:
+
+HTML
+    ↓
+menentukan struktur
+
+CSS
+    ↓
+mengatur tampilan
+
+
+============================================================
+31. EKSPERIMEN BELAJAR
+============================================================
+
+Tujuan eksperimen bukan sekadar membuat website berubah.
+
+Tujuannya adalah belajar memprediksi:
+
+"Kalau kode ini gue ubah, apa yang akan terjadi?"
+
+------------------------------------------------------------
+Eksperimen 1
+------------------------------------------------------------
+
+Ubah:
+
+<h1>Mohammad Rama al-jannah</h1>
+
+menjadi:
+
+<h1>MORA PROJECT UI</h1>
+
+Lihat perubahan pada halaman.
+
+------------------------------------------------------------
+Eksperimen 2
+------------------------------------------------------------
+
+Hapus:
+
+<link rel="stylesheet" href="./style.css">
+
+Commit.
+
+Lihat website.
+
+Kemudian pasang kembali.
+
+Tujuan:
+
+Memahami perbedaan HTML dan CSS secara langsung.
+
+------------------------------------------------------------
+Eksperimen 3
+------------------------------------------------------------
+
+Ubah:
+
+href="#about"
+
+menjadi:
+
+href="#contact"
+
+Klik link About.
+
+Perhatikan section yang dibuka.
+
+Tujuan:
+
+Memahami hubungan href="#..." dengan id="...".
+
+------------------------------------------------------------
+Eksperimen 4
+------------------------------------------------------------
+
+Ubah:
+
+class="profile-image"
+
+menjadi:
+
+class="test"
+
+Jangan ubah CSS.
+
+Lihat apa yang terjadi pada gambar profile.
+
+Tujuan:
+
+Memahami hubungan antara class HTML dan selector CSS.
+
+------------------------------------------------------------
+Eksperimen 5
+------------------------------------------------------------
+
+Cari CSS:
+
+.skills-list span
+
+Ubah:
+
+border-radius: 999px;
+
+menjadi:
+
+border-radius: 0;
+
+Lihat perubahan bentuk badge.
+
+Tujuan:
+
+Memahami bagaimana CSS mengubah tampilan elemen HTML.
+
+------------------------------------------------------------
+Eksperimen 6
+------------------------------------------------------------
+
+Ubah:
+
+gap: 12px;
+
+menjadi:
+
+gap: 30px;
+
+Lihat jarak antar badge.
+
+Tujuan:
+
+Memahami fungsi property gap.
+
+
+============================================================
+32. TARGET PEMAHAMAN
+============================================================
+
+Aku tidak perlu menghafal seluruh HTML.
+
+Aku dianggap mulai memahami HTML + CSS dasar ketika sudah bisa:
+
+1. Melihat HTML dan memahami struktur halamannya.
+
+2. Melihat class dan mengetahui CSS mana yang kemungkinan
+   memengaruhinya.
+
+3. Melihat id dan memahami bahwa id dapat digunakan sebagai
+   tujuan link atau selector CSS.
+
+4. Memahami perbedaan src dan href.
+
+5. Mengetahui fungsi dasar:
+   html
+   head
+   body
+   header
+   nav
+   main
+   section
+   article
+   footer
+   div
+   span
+   p
+   h1-h6
+   a
+   img
+
+6. Bisa mengubah kode sendiri dan memprediksi hasilnya.
+
+7. Bisa mencari penyebab ketika perubahan tidak bekerja.
+
+
+============================================================
+KESIMPULAN BELAJAR HARI INI
+============================================================
+
+Hari ini aku mulai memahami bahwa membuat website bukan hanya
+tentang menyalin kode.
+
+HTML digunakan untuk membangun struktur dan isi halaman.
+
+CSS digunakan untuk mengatur tampilan halaman.
+
+Class dan id menjadi penghubung penting antara struktur HTML
+dengan CSS.
+
+src digunakan untuk menentukan sumber file seperti gambar,
+sedangkan href digunakan untuk menentukan tujuan link atau
+file yang ingin dihubungkan.
+
+Aku juga mulai memahami bahwa cara belajar yang lebih efektif
+adalah melakukan eksperimen:
+
+ubah kode
+    ↓
+commit
+    ↓
+lihat hasil
+    ↓
+bandingkan dengan prediksi
+    ↓
+pahami penyebabnya
+
+Target berikutnya bukan langsung membuat website yang kompleks,
+tetapi memastikan aku benar-benar memahami dasar HTML dan CSS
+sebelum mengembangkan portfolio lebih jauh.
+
+============================================================
+END OF DIARY
+============================================================
