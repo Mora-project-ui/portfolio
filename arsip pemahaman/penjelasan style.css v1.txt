@@ -1,0 +1,2391 @@
+============================================================
+CSS LEARNING DIARY
+Portfolio Website - Mora Project UI
+Tanggal: 18 September 2026
+============================================================
+
+Hari ini aku mulai memahami CSS bukan hanya sebagai kumpulan
+kode untuk mempercantik website, tetapi sebagai sistem yang
+mengatur bagaimana elemen HTML ditampilkan.
+
+Prinsip belajar:
+
+HTML = struktur dan isi
+CSS  = tampilan dan perilaku visual
+
+Cara belajar:
+
+ubah CSS
+    ↓
+lihat hasil
+    ↓
+bandingkan dengan kode
+    ↓
+pahami property yang berubah
+
+
+============================================================
+1. UNIVERSAL SELECTOR *
+============================================================
+
+Kode:
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+Tanda:
+
+*
+
+disebut universal selector.
+
+Artinya CSS ini berlaku untuk semua elemen HTML.
+
+Contoh:
+
+* {
+    margin: 0;
+}
+
+berarti margin semua elemen di-reset menjadi 0.
+
+
+------------------------------------------------------------
+margin: 0;
+------------------------------------------------------------
+
+Margin adalah jarak bagian luar sebuah elemen.
+
+Contoh:
+
+[ margin ]
+[  elemen  ]
+[ margin ]
+
+Dengan:
+
+margin: 0;
+
+browser tidak memberikan margin default pada elemen tersebut.
+
+
+------------------------------------------------------------
+padding: 0;
+------------------------------------------------------------
+
+Padding adalah jarak antara isi elemen dengan batas/border
+elemen tersebut.
+
+Gampangnya:
+
+margin
+= jarak di luar elemen
+
+padding
+= jarak di dalam elemen
+
+
+------------------------------------------------------------
+box-sizing: border-box;
+------------------------------------------------------------
+
+Ini mengubah cara browser menghitung ukuran elemen.
+
+Dengan:
+
+box-sizing: border-box;
+
+width dan height yang diberikan sudah termasuk:
+
+content
++ padding
++ border
+
+Ini membuat pengaturan ukuran elemen lebih mudah diprediksi.
+
+Tanpa border-box, padding dan border dapat menambah ukuran
+total elemen di luar width/height yang diberikan.
+
+
+============================================================
+2. html
+============================================================
+
+Kode:
+
+html {
+    scroll-behavior: smooth;
+}
+
+Menargetkan elemen <html>.
+
+Property:
+
+scroll-behavior: smooth;
+
+membuat perpindahan halaman ketika menggunakan anchor link
+menjadi halus.
+
+Contoh HTML:
+
+<a href="#contact">Contact</a>
+
+Ketika diklik, browser tidak langsung melompat secara kasar
+ke bagian Contact.
+
+Dengan:
+
+scroll-behavior: smooth;
+
+perpindahannya menjadi smooth.
+
+
+------------------------------------------------------------
+Eksperimen
+------------------------------------------------------------
+
+Ubah:
+
+scroll-behavior: smooth;
+
+menjadi:
+
+scroll-behavior: auto;
+
+Kemudian klik link navbar.
+
+Bandingkan perbedaannya.
+
+
+============================================================
+3. body
+============================================================
+
+Kode:
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0f1115;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+body adalah seluruh area utama halaman.
+
+
+------------------------------------------------------------
+font-family
+------------------------------------------------------------
+
+Kode:
+
+font-family: Arial, sans-serif;
+
+Menentukan jenis font.
+
+Arial adalah font utama.
+
+sans-serif adalah fallback.
+
+Artinya jika Arial tidak tersedia, browser menggunakan font
+jenis sans-serif lainnya.
+
+
+------------------------------------------------------------
+background
+------------------------------------------------------------
+
+Kode:
+
+background: #0f1115;
+
+Menentukan warna background halaman.
+
+#0f1115 adalah warna dalam format hexadecimal.
+
+Contoh:
+
+#ffffff
+= putih
+
+#000000
+= hitam
+
+#0f1115
+= warna gelap yang digunakan portfolio.
+
+
+------------------------------------------------------------
+color
+------------------------------------------------------------
+
+Kode:
+
+color: #ffffff;
+
+Menentukan warna teks default.
+
+Karena berada di body, elemen teks yang tidak mempunyai warna
+sendiri biasanya akan mewarisi warna ini.
+
+
+------------------------------------------------------------
+line-height
+------------------------------------------------------------
+
+Kode:
+
+line-height: 1.6;
+
+Mengatur jarak vertikal antar baris teks.
+
+Semakin besar nilainya, semakin renggang jarak antar baris.
+
+Contoh:
+
+line-height: 1;
+
+lebih rapat.
+
+line-height: 1.6;
+
+lebih nyaman untuk paragraf.
+
+
+============================================================
+4. KOMENTAR CSS
+============================================================
+
+Contoh:
+
+/* NAVBAR */
+
+Komentar CSS tidak memengaruhi tampilan website.
+
+Tujuannya untuk mengelompokkan kode agar lebih mudah dibaca.
+
+Contoh:
+
+/* NAVBAR */
+
+/* HERO */
+
+/* PROJECTS */
+
+/* SKILLS */
+
+/* CONTACT */
+
+Ini sangat membantu ketika file CSS sudah panjang.
+
+
+============================================================
+5. header
+============================================================
+
+Kode:
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(15, 17, 21, 0.9);
+    border-bottom: 1px solid #252932;
+    backdrop-filter: blur(10px);
+}
+
+Selector:
+
+header
+
+menargetkan:
+
+<header>
+
+di HTML.
+
+
+------------------------------------------------------------
+position: sticky;
+------------------------------------------------------------
+
+Membuat header dapat tetap berada di posisi atas ketika
+halaman di-scroll.
+
+Berbeda dengan position: static biasa.
+
+Sticky membuat elemen mengikuti scroll sampai batas tertentu.
+
+
+------------------------------------------------------------
+top: 0;
+------------------------------------------------------------
+
+Menentukan posisi sticky dari bagian atas.
+
+top: 0;
+
+berarti:
+
+"Tempelkan elemen pada posisi 0 dari atas."
+
+
+------------------------------------------------------------
+z-index: 1000;
+------------------------------------------------------------
+
+Mengatur urutan tumpukan elemen.
+
+Semakin tinggi nilai z-index, biasanya elemen berada di depan
+elemen lain yang memiliki stacking context yang sama.
+
+1000 digunakan agar navbar tetap berada di atas konten.
+
+
+------------------------------------------------------------
+background: rgba(...)
+------------------------------------------------------------
+
+Kode:
+
+background: rgba(15, 17, 21, 0.9);
+
+rgba terdiri dari:
+
+R = Red
+G = Green
+B = Blue
+A = Alpha/transparency
+
+Angka terakhir:
+
+0.9
+
+berarti tingkat opacity/transparansi.
+
+1.0 = sepenuhnya opaque
+0.0 = transparan
+
+Jadi background navbar sedikit transparan.
+
+
+------------------------------------------------------------
+border-bottom
+------------------------------------------------------------
+
+Kode:
+
+border-bottom: 1px solid #252932;
+
+Memberikan garis pada bagian bawah navbar.
+
+Struktur:
+
+border-bottom:
+    1px      -> ketebalan
+    solid    -> jenis garis
+    #252932  -> warna
+
+
+------------------------------------------------------------
+backdrop-filter
+------------------------------------------------------------
+
+Kode:
+
+backdrop-filter: blur(10px);
+
+Memberikan efek blur pada area di belakang elemen.
+
+Karena background navbar dibuat transparan, efek ini membuat
+navbar terlihat seperti kaca/blur.
+
+
+============================================================
+6. nav
+============================================================
+
+Kode:
+
+nav {
+    max-width: 1100px;
+    margin: auto;
+    padding: 18px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+Selector:
+
+nav
+
+menargetkan:
+
+<nav>
+
+
+------------------------------------------------------------
+max-width
+------------------------------------------------------------
+
+Kode:
+
+max-width: 1100px;
+
+Membatasi lebar maksimal navbar menjadi 1100px.
+
+Walaupun layar lebih besar, konten tidak terus melebar.
+
+
+------------------------------------------------------------
+margin: auto;
+------------------------------------------------------------
+
+Kode:
+
+margin: auto;
+
+Digunakan untuk membuat container dengan lebar tertentu
+berada di tengah secara horizontal.
+
+Karena terdapat max-width, container navbar akan berada
+di tengah halaman.
+
+
+------------------------------------------------------------
+padding: 18px 30px;
+------------------------------------------------------------
+
+Format dua nilai:
+
+padding: 18px 30px;
+
+berarti:
+
+atas/bawah = 18px
+kiri/kanan = 30px
+
+
+------------------------------------------------------------
+display: flex;
+------------------------------------------------------------
+
+Mengaktifkan Flexbox.
+
+Flexbox digunakan untuk mengatur posisi elemen dalam satu
+dimensi.
+
+Contoh:
+
+Mora-project-ui     About Projects Skills Contact
+
+
+------------------------------------------------------------
+justify-content
+------------------------------------------------------------
+
+Kode:
+
+justify-content: space-between;
+
+Mengatur posisi elemen pada arah utama flex.
+
+space-between:
+
+elemen pertama berada di sisi kiri
+elemen terakhir berada di sisi kanan
+ruang sisanya dibagikan di antara elemen.
+
+
+------------------------------------------------------------
+align-items
+------------------------------------------------------------
+
+Kode:
+
+align-items: center;
+
+Mengatur posisi elemen pada arah silang.
+
+center:
+
+membuat elemen berada di tengah secara vertikal.
+
+
+============================================================
+7. nav h2
+============================================================
+
+Kode:
+
+nav h2 {
+    color: #20b878;
+}
+
+Menargetkan:
+
+<h2>
+
+yang berada di dalam:
+
+<nav>
+
+Jadi bukan semua h2 di website.
+
+Warna teks dibuat hijau.
+
+
+============================================================
+8. nav div
+============================================================
+
+Kode:
+
+nav div {
+    display: flex;
+    gap: 25px;
+}
+
+Menargetkan <div> yang berada di dalam <nav>.
+
+Pada HTML:
+
+<div class="nav-links">
+
+Digunakan untuk mengatur link navbar.
+
+
+------------------------------------------------------------
+gap
+------------------------------------------------------------
+
+Kode:
+
+gap: 25px;
+
+Mengatur jarak antar item Flexbox.
+
+Contoh:
+
+About    Projects    Skills    Contact
+
+Jika:
+
+gap: 25px;
+
+jaraknya lebih besar daripada:
+
+gap: 10px;
+
+
+============================================================
+9. nav a
+============================================================
+
+Kode:
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+Menargetkan link <a> di dalam navbar.
+
+
+------------------------------------------------------------
+color
+------------------------------------------------------------
+
+Menentukan warna teks link.
+
+
+------------------------------------------------------------
+text-decoration: none;
+------------------------------------------------------------
+
+Menghilangkan garis bawah default pada link.
+
+Default browser biasanya memberikan:
+
+About
+-----
+
+Dengan:
+
+text-decoration: none;
+
+garis tersebut hilang.
+
+
+------------------------------------------------------------
+transition
+------------------------------------------------------------
+
+Kode:
+
+transition: 0.2s;
+
+Membuat perubahan style berlangsung selama 0.2 detik.
+
+Biasanya digunakan bersama:
+
+:hover
+
+
+============================================================
+10. nav a:hover
+============================================================
+
+Kode:
+
+nav a:hover {
+    color: #20b878;
+}
+
+:hover berarti kondisi ketika cursor berada di atas elemen.
+
+Jadi ketika cursor diarahkan ke link navbar:
+
+warna putih
+    ↓
+warna hijau
+
+
+============================================================
+11. main
+============================================================
+
+Kode:
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 30px;
+}
+
+Menargetkan:
+
+<main>
+
+Tujuannya membuat konten utama tidak terlalu melebar.
+
+
+------------------------------------------------------------
+padding: 0 30px;
+------------------------------------------------------------
+
+Format:
+
+atas/bawah = 0
+kiri/kanan = 30px
+
+Ini memberi ruang agar konten tidak menempel ke pinggir layar.
+
+
+============================================================
+12. #hero
+============================================================
+
+Kode:
+
+#hero {
+    min-height: 85vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+Tanda:
+
+#
+
+digunakan untuk selector ID.
+
+Jadi:
+
+#hero
+
+menargetkan:
+
+<section id="hero">
+
+
+------------------------------------------------------------
+min-height: 85vh;
+------------------------------------------------------------
+
+vh = viewport height.
+
+85vh berarti minimal tinggi section adalah 85% tinggi layar.
+
+Jika tinggi layar:
+
+100vh
+
+maka:
+
+85vh
+= 85% tinggi viewport.
+
+
+------------------------------------------------------------
+display: flex;
+------------------------------------------------------------
+
+Mengaktifkan Flexbox.
+
+
+------------------------------------------------------------
+flex-direction: column;
+------------------------------------------------------------
+
+Mengubah arah Flexbox menjadi vertikal.
+
+Tanpa ini, default flex-direction adalah:
+
+row
+
+Dengan:
+
+column
+
+elemen disusun:
+
+foto
+Hello
+nama
+subtitle
+deskripsi
+
+
+------------------------------------------------------------
+justify-content: center;
+------------------------------------------------------------
+
+Memposisikan isi flex di tengah pada arah utama.
+
+Karena direction = column, arah utamanya adalah vertikal.
+
+Jadi isi Hero berada di tengah secara vertikal.
+
+
+============================================================
+13. #hero p:first-child
+============================================================
+
+Kode:
+
+#hero p:first-child {
+    color: #20b878;
+    font-size: 18px;
+}
+
+Menargetkan paragraf pertama dalam #hero.
+
+Pada HTML:
+
+<p class="eyebrow">Hello, I'm</p>
+
+:first-child berarti elemen tersebut merupakan child pertama
+dalam parent-nya.
+
+Property:
+
+color
+= warna teks
+
+font-size
+= ukuran teks
+
+
+============================================================
+14. #hero h1
+============================================================
+
+Kode:
+
+#hero h1 {
+    font-size: clamp(40px, 7vw, 72px);
+    line-height: 1.1;
+    margin: 10px 0;
+}
+
+Menargetkan h1 di dalam hero.
+
+
+------------------------------------------------------------
+clamp()
+------------------------------------------------------------
+
+Kode:
+
+font-size: clamp(40px, 7vw, 72px);
+
+clamp memiliki tiga nilai:
+
+clamp(minimum, preferred, maximum)
+
+Jadi:
+
+minimum = 40px
+preferred = 7vw
+maximum = 72px
+
+Ukuran font dapat menyesuaikan layar tetapi tidak akan
+lebih kecil dari 40px atau lebih besar dari 72px.
+
+
+------------------------------------------------------------
+vw
+------------------------------------------------------------
+
+vw = viewport width.
+
+7vw berarti 7% dari lebar viewport.
+
+
+------------------------------------------------------------
+line-height
+------------------------------------------------------------
+
+Kode:
+
+line-height: 1.1;
+
+Mengatur tinggi/jarak antar baris.
+
+
+------------------------------------------------------------
+margin: 10px 0;
+------------------------------------------------------------
+
+Format:
+
+atas/bawah = 10px
+kiri/kanan = 0
+
+
+============================================================
+15. #hero h2
+============================================================
+
+Kode:
+
+#hero h2 {
+    color: #a7adb8;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+Mengatur subtitle pada Hero.
+
+color
+= warna
+
+font-size
+= ukuran
+
+font-weight
+= ketebalan font
+
+normal
+= ketebalan normal, tidak bold.
+
+
+============================================================
+16. #hero p:last-child
+============================================================
+
+Kode:
+
+#hero p:last-child {
+    max-width: 650px;
+    margin-top: 20px;
+    color: #8f96a3;
+    font-size: 18px;
+}
+
+:last-child berarti memilih elemen yang menjadi child terakhir.
+
+Pada Hero, ini digunakan untuk paragraf deskripsi terakhir.
+
+
+------------------------------------------------------------
+max-width
+------------------------------------------------------------
+
+Membatasi lebar paragraf hingga 650px.
+
+Tujuannya agar teks tidak terlalu panjang dalam satu baris.
+
+
+------------------------------------------------------------
+margin-top
+------------------------------------------------------------
+
+Kode:
+
+margin-top: 20px;
+
+Memberikan jarak 20px dari elemen di atas.
+
+
+============================================================
+17. .profile-image
+============================================================
+
+Kode:
+
+.profile-image {
+    width: 140px;
+    height: 140px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 3px solid #20b878;
+
+    margin-bottom: 25px;
+}
+
+Selector:
+
+.profile-image
+
+menargetkan:
+
+class="profile-image"
+
+
+------------------------------------------------------------
+width dan height
+------------------------------------------------------------
+
+width: 140px;
+height: 140px;
+
+Menentukan ukuran gambar.
+
+Lebar = 140px
+Tinggi = 140px
+
+
+------------------------------------------------------------
+object-fit: cover;
+------------------------------------------------------------
+
+Mengatur bagaimana gambar menyesuaikan ukuran container.
+
+cover berarti gambar memenuhi area yang tersedia.
+
+Jika rasio gambar berbeda, sebagian gambar dapat terpotong.
+
+
+------------------------------------------------------------
+border-radius: 50%;
+------------------------------------------------------------
+
+Membuat sudut elemen menjadi sangat bulat.
+
+Pada gambar persegi:
+
+border-radius: 50%;
+
+membuatnya menjadi lingkaran.
+
+
+------------------------------------------------------------
+border
+------------------------------------------------------------
+
+Kode:
+
+border: 3px solid #20b878;
+
+Terdiri dari:
+
+3px
+= ketebalan
+
+solid
+= jenis garis
+
+#20b878
+= warna
+
+
+------------------------------------------------------------
+margin-bottom
+------------------------------------------------------------
+
+Kode:
+
+margin-bottom: 25px;
+
+Memberikan jarak antara foto profile dengan elemen di bawahnya.
+
+
+============================================================
+18. section
+============================================================
+
+Kode:
+
+section {
+    padding: 100px 0;
+}
+
+Menargetkan semua <section>.
+
+padding:
+
+atas/bawah = 100px
+kiri/kanan = 0
+
+Tujuannya memberi ruang antar bagian website.
+
+
+============================================================
+19. section > h2
+============================================================
+
+Kode:
+
+section > h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #20b878;
+}
+
+Tanda:
+
+>
+
+disebut child combinator.
+
+Artinya h2 yang merupakan child langsung dari section.
+
+Contoh:
+
+<section>
+    <h2>Projects</h2>
+</section>
+
+h2 tersebut cocok.
+
+Selector ini tidak berarti semua h2 di dalam section,
+tetapi h2 yang merupakan child langsung.
+
+
+============================================================
+20. #about p
+============================================================
+
+Kode:
+
+#about p {
+    max-width: 800px;
+    margin-bottom: 15px;
+    color: #b7bdc8;
+}
+
+Menargetkan semua <p> di dalam:
+
+#about
+
+max-width
+= membatasi lebar teks
+
+margin-bottom
+= memberi jarak antar paragraf
+
+color
+= warna teks
+
+
+============================================================
+21. #projects
+============================================================
+
+Kode:
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+Project section menggunakan Flexbox.
+
+flex-direction: column;
+
+membuat project disusun secara vertikal.
+
+gap: 20px;
+
+memberikan jarak 20px antar project card.
+
+
+============================================================
+22. #projects > h2
+============================================================
+
+Kode:
+
+#projects > h2 {
+    margin-bottom: 10px;
+}
+
+Memilih h2 yang merupakan child langsung dari project section.
+
+Memberikan jarak 10px di bawah heading Projects.
+
+
+============================================================
+23. article
+============================================================
+
+Kode:
+
+article {
+    padding: 25px;
+
+    background: #171a21;
+    border: 1px solid #272c35;
+    border-radius: 12px;
+
+    transition: 0.2s;
+}
+
+Menargetkan semua:
+
+<article>
+
+Pada website, setiap project menggunakan article.
+
+
+------------------------------------------------------------
+padding
+------------------------------------------------------------
+
+padding: 25px;
+
+Memberikan ruang di dalam card.
+
+
+------------------------------------------------------------
+background
+------------------------------------------------------------
+
+Memberikan warna background card.
+
+
+------------------------------------------------------------
+border
+------------------------------------------------------------
+
+Memberikan garis tipis di sekeliling card.
+
+
+------------------------------------------------------------
+border-radius
+------------------------------------------------------------
+
+border-radius: 12px;
+
+Membuat sudut card membulat.
+
+
+------------------------------------------------------------
+transition
+------------------------------------------------------------
+
+transition: 0.2s;
+
+Membuat perubahan style ketika hover menjadi halus.
+
+
+============================================================
+24. article:hover
+============================================================
+
+Kode:
+
+article:hover {
+    transform: translateY(-4px);
+    border-color: #20b878;
+}
+
+Ketika cursor berada di atas article:
+
+------------------------------------------------------------
+transform
+------------------------------------------------------------
+
+transform digunakan untuk mengubah posisi atau bentuk elemen.
+
+translateY(-4px)
+
+berarti elemen bergerak 4px ke atas.
+
+------------------------------------------------------------
+border-color
+------------------------------------------------------------
+
+Mengubah warna border menjadi hijau.
+
+Hasil akhirnya:
+
+card naik sedikit
++
+border berubah hijau
+
+Karena sebelumnya menggunakan:
+
+transition: 0.2s;
+
+perubahannya terasa smooth.
+
+
+============================================================
+25. article h3
+============================================================
+
+Kode:
+
+article h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+Menargetkan h3 di dalam article.
+
+margin-bottom
+= memberi jarak di bawah judul project
+
+font-size
+= ukuran judul project
+
+
+============================================================
+26. article p
+============================================================
+
+Kode:
+
+article p {
+    color: #9da4b0;
+    margin-bottom: 15px;
+}
+
+Mengatur paragraf project.
+
+color
+= warna teks
+
+margin-bottom
+= jarak antara deskripsi dan elemen berikutnya.
+
+
+============================================================
+27. article a
+============================================================
+
+Kode:
+
+article a {
+    color: #20b878;
+    text-decoration: none;
+}
+
+Mengatur link yang berada di dalam article.
+
+color
+= hijau
+
+text-decoration: none
+= menghilangkan underline.
+
+
+============================================================
+28. .skills-list
+============================================================
+
+Kode:
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+Menargetkan:
+
+<div class="skills-list">
+
+
+------------------------------------------------------------
+display: flex;
+------------------------------------------------------------
+
+Mengaktifkan Flexbox.
+
+
+------------------------------------------------------------
+flex-wrap: wrap;
+------------------------------------------------------------
+
+Memungkinkan item turun ke baris berikutnya ketika ruang
+horizontal tidak cukup.
+
+Contoh:
+
+Linux | Git | Kotlin | Android
+HTML | CSS | ...
+
+Tanpa wrap, semua item akan berusaha berada dalam satu baris.
+
+
+------------------------------------------------------------
+gap: 12px;
+------------------------------------------------------------
+
+Memberikan jarak 12px antar badge.
+
+
+============================================================
+29. .skills-list span
+============================================================
+
+Kode:
+
+.skills-list span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    background: #171a21;
+    border: 1px solid #272c35;
+    border-radius: 999px;
+
+    color: #c9ced6;
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.2s;
+}
+
+Ini adalah style utama badge skill.
+
+
+------------------------------------------------------------
+display: inline-flex;
+------------------------------------------------------------
+
+Menggunakan Flexbox tetapi tetap berperilaku seperti elemen
+inline dalam aliran teks.
+
+
+------------------------------------------------------------
+align-items: center;
+------------------------------------------------------------
+
+Membuat icon dan teks berada di tengah secara vertikal.
+
+
+------------------------------------------------------------
+gap: 8px;
+------------------------------------------------------------
+
+Memberikan jarak antara:
+
+icon
+
+dan
+
+nama skill
+
+
+------------------------------------------------------------
+padding: 8px 14px;
+------------------------------------------------------------
+
+atas/bawah = 8px
+kiri/kanan = 14px
+
+Membuat badge memiliki ruang di dalamnya.
+
+
+------------------------------------------------------------
+background
+------------------------------------------------------------
+
+Memberikan warna background badge.
+
+
+------------------------------------------------------------
+border
+------------------------------------------------------------
+
+Memberikan garis tipis pada badge.
+
+
+------------------------------------------------------------
+border-radius: 999px;
+------------------------------------------------------------
+
+Nilai besar membuat badge menjadi sangat membulat.
+
+Karena tinggi badge kecil, hasilnya terlihat seperti pill/badge.
+
+
+------------------------------------------------------------
+font-size
+------------------------------------------------------------
+
+Mengatur ukuran teks skill.
+
+
+------------------------------------------------------------
+font-weight
+------------------------------------------------------------
+
+Mengatur ketebalan teks.
+
+500 berarti sedikit lebih tebal dari normal.
+
+
+============================================================
+30. .skills-list span:hover
+============================================================
+
+Kode:
+
+.skills-list span:hover {
+    color: #20b878;
+    border-color: #20b878;
+    transform: translateY(-2px);
+}
+
+Ketika cursor berada di atas badge:
+
+teks menjadi hijau
+border menjadi hijau
+badge naik 2px
+
+
+Karena terdapat:
+
+transition: 0.2s;
+
+perubahannya menjadi smooth.
+
+
+============================================================
+31. .skills-list img
+============================================================
+
+Kode:
+
+.skills-list img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+Mengatur icon skill.
+
+width
+= lebar icon
+
+height
+= tinggi icon
+
+object-fit: contain
+= menjaga agar gambar tetap masuk ke area
+tanpa terpotong dan mempertahankan rasio gambar.
+
+
+============================================================
+32. #contact a
+============================================================
+
+Kode:
+
+#contact a {
+    display: inline-block;
+    margin: 5px 0;
+
+    color: #20b878;
+    text-decoration: none;
+}
+
+Mengatur link yang berada di dalam contact section.
+
+
+------------------------------------------------------------
+display: inline-block;
+------------------------------------------------------------
+
+Menggabungkan karakteristik inline dan block.
+
+Elemen tetap berada dalam aliran horizontal, tetapi property
+seperti margin dan ukuran dapat dikontrol lebih fleksibel.
+
+
+------------------------------------------------------------
+margin: 5px 0;
+------------------------------------------------------------
+
+atas/bawah = 5px
+kiri/kanan = 0
+
+
+============================================================
+33. footer
+============================================================
+
+Kode:
+
+footer {
+    margin-top: 50px;
+    padding: 30px;
+
+    text-align: center;
+
+    border-top: 1px solid #252932;
+    color: #737a86;
+}
+
+Menargetkan:
+
+<footer>
+
+
+------------------------------------------------------------
+margin-top
+------------------------------------------------------------
+
+Memberikan jarak antara content sebelumnya dengan footer.
+
+
+------------------------------------------------------------
+padding
+------------------------------------------------------------
+
+Memberikan ruang di dalam footer.
+
+
+------------------------------------------------------------
+text-align
+------------------------------------------------------------
+
+text-align: center;
+
+Membuat teks berada di tengah.
+
+
+------------------------------------------------------------
+border-top
+------------------------------------------------------------
+
+Memberikan garis pada bagian atas footer.
+
+
+------------------------------------------------------------
+color
+------------------------------------------------------------
+
+Mengatur warna teks footer.
+
+
+============================================================
+34. @media
+============================================================
+
+Kode:
+
+@media (max-width: 700px) {
+
+    ...
+
+}
+
+Ini adalah media query.
+
+Media query digunakan untuk memberikan CSS berbeda
+berdasarkan kondisi perangkat atau ukuran layar.
+
+Di sini:
+
+max-width: 700px
+
+berarti aturan di dalamnya aktif ketika lebar viewport
+maksimal 700px.
+
+Biasanya digunakan untuk layar HP atau layar kecil.
+
+
+============================================================
+35. RESPONSIVE NAV
+============================================================
+
+Kode:
+
+@media (max-width: 700px) {
+
+    nav {
+        padding: 15px 20px;
+    }
+
+}
+
+Saat layar <= 700px:
+
+padding navbar berubah menjadi:
+
+atas/bawah = 15px
+kiri/kanan = 20px
+
+Tujuannya menghemat ruang.
+
+
+============================================================
+36. RESPONSIVE GAP
+============================================================
+
+Kode:
+
+nav div {
+    gap: 12px;
+}
+
+Pada layar kecil jarak antar link navbar dikurangi.
+
+Desktop:
+
+gap: 25px;
+
+Mobile:
+
+gap: 12px;
+
+
+============================================================
+37. RESPONSIVE FONT
+============================================================
+
+Kode:
+
+nav a {
+    font-size: 14px;
+}
+
+Mengecilkan ukuran teks link navbar pada layar kecil.
+
+
+============================================================
+38. RESPONSIVE MAIN
+============================================================
+
+Kode:
+
+main {
+    padding: 0 20px;
+}
+
+Pada layar kecil padding kiri dan kanan dikurangi.
+
+Desktop:
+
+30px
+
+Mobile:
+
+20px
+
+Tujuannya agar konten tidak memakan terlalu banyak ruang.
+
+
+============================================================
+39. RESPONSIVE HERO H1
+============================================================
+
+Kode:
+
+#hero h1 {
+    font-size: 42px;
+}
+
+Pada layar kecil ukuran h1 dibuat lebih kecil.
+
+Desktop menggunakan:
+
+clamp(40px, 7vw, 72px)
+
+Sedangkan mobile diberikan:
+
+42px
+
+Supaya nama tidak terlalu besar pada layar HP.
+
+
+============================================================
+40. RESPONSIVE HERO H2
+============================================================
+
+Kode:
+
+#hero h2 {
+    font-size: 20px;
+}
+
+Subtitle Hero dibuat lebih kecil pada layar kecil.
+
+
+============================================================
+41. RESPONSIVE SECTION
+============================================================
+
+Kode:
+
+section {
+    padding: 70px 0;
+}
+
+Desktop:
+
+padding: 100px 0;
+
+Mobile:
+
+padding: 70px 0;
+
+Tujuannya mengurangi ruang vertikal agar website lebih
+proporsional pada layar kecil.
+
+
+============================================================
+42. KONSEP CSS PALING PENTING
+============================================================
+
+Beberapa konsep yang perlu dipahami:
+
+------------------------------------------------------------
+SELECTOR
+------------------------------------------------------------
+
+Menentukan elemen mana yang akan diberi style.
+
+Contoh:
+
+body
+
+header
+
+nav a
+
+article
+
+------------------------------------------------------------
+CLASS SELECTOR
+------------------------------------------------------------
+
+Diawali dengan:
+
+.
+
+Contoh:
+
+.profile-image
+
+.skills-list
+
+Menargetkan:
+
+class="profile-image"
+
+class="skills-list"
+
+
+------------------------------------------------------------
+ID SELECTOR
+------------------------------------------------------------
+
+Diawali dengan:
+
+#
+
+Contoh:
+
+#hero
+
+#projects
+
+#contact
+
+Menargetkan:
+
+id="hero"
+
+id="projects"
+
+id="contact"
+
+
+------------------------------------------------------------
+ELEMENT SELECTOR
+------------------------------------------------------------
+
+Contoh:
+
+body
+
+header
+
+article
+
+footer
+
+Menargetkan elemen HTML langsung.
+
+
+------------------------------------------------------------
+DESCENDANT SELECTOR
+------------------------------------------------------------
+
+Contoh:
+
+nav a
+
+Artinya:
+
+semua <a> yang berada di dalam <nav>.
+
+
+------------------------------------------------------------
+CHILD SELECTOR
+------------------------------------------------------------
+
+Contoh:
+
+section > h2
+
+Tanda:
+
+>
+
+berarti child langsung.
+
+Artinya:
+
+<h2> yang merupakan child langsung dari <section>.
+
+
+============================================================
+43. PROPERTY VS VALUE
+============================================================
+
+Contoh:
+
+color: #20b878;
+
+color
+= property
+
+#20b878
+= value
+
+Contoh lain:
+
+font-size: 20px;
+
+font-size
+= property
+
+20px
+= value
+
+
+Gampangnya:
+
+property
+= "Apa yang mau diatur?"
+
+value
+= "Diatur menjadi apa?"
+
+
+============================================================
+44. UNIT CSS YANG DIGUNAKAN
+============================================================
+
+Beberapa unit yang digunakan hari ini:
+
+px
+= pixel
+
+%
+
+= persentase
+
+vh
+= viewport height
+
+vw
+= viewport width
+
+Contoh:
+
+140px
+= 140 pixel
+
+85vh
+= 85% tinggi viewport
+
+7vw
+= 7% lebar viewport
+
+
+============================================================
+45. WARNA HEX
+============================================================
+
+Contoh:
+
+#ffffff
+= putih
+
+#000000
+= hitam
+
+#20b878
+= hijau yang digunakan portfolio
+
+Format:
+
+#RRGGBB
+
+RR
+= red
+
+GG
+= green
+
+BB
+= blue
+
+Setiap bagian menggunakan hexadecimal.
+
+
+============================================================
+46. CSS CASCADE
+============================================================
+
+CSS berarti:
+
+Cascading Style Sheets.
+
+Salah satu konsep penting adalah ketika beberapa aturan
+CSS dapat memengaruhi elemen yang sama.
+
+Contoh:
+
+p {
+    color: white;
+}
+
+#about p {
+    color: green;
+}
+
+Paragraf di dalam #about akan mendapatkan aturan yang lebih
+spesifik dari:
+
+#about p
+
+dibanding:
+
+p
+
+Jadi memahami selector dan specificity penting ketika website
+semakin kompleks.
+
+
+============================================================
+47. HUBUNGAN HTML DAN CSS
+============================================================
+
+Contoh:
+
+HTML:
+
+<span class="skills-list">
+    ...
+</span>
+
+CSS:
+
+.skills-list {
+    display: flex;
+}
+
+HTML menentukan:
+
+"Elemen ini memiliki class skills-list."
+
+CSS kemudian mengatakan:
+
+"Elemen dengan class skills-list ditampilkan menggunakan
+Flexbox."
+
+
+Contoh lain:
+
+HTML:
+
+<img class="profile-image">
+
+CSS:
+
+.profile-image {
+    width: 140px;
+    border-radius: 50%;
+}
+
+HTML = struktur
+
+CSS = tampilan
+
+
+============================================================
+48. EKSPERIMEN CSS
+============================================================
+
+Jangan cuma membaca.
+
+Coba ubah CSS sendiri dan prediksi hasilnya.
+
+------------------------------------------------------------
+Eksperimen 1
+------------------------------------------------------------
+
+Ubah:
+
+background: #0f1115;
+
+menjadi:
+
+background: red;
+
+Apa yang terjadi?
+
+
+------------------------------------------------------------
+Eksperimen 2
+------------------------------------------------------------
+
+Ubah:
+
+border-radius: 50%;
+
+pada profile image menjadi:
+
+border-radius: 0;
+
+Apa yang terjadi pada foto?
+
+
+------------------------------------------------------------
+Eksperimen 3
+------------------------------------------------------------
+
+Ubah:
+
+width: 140px;
+height: 140px;
+
+menjadi:
+
+width: 200px;
+height: 200px;
+
+Apa yang berubah?
+
+
+------------------------------------------------------------
+Eksperimen 4
+------------------------------------------------------------
+
+Ubah:
+
+gap: 12px;
+
+pada skills menjadi:
+
+gap: 30px;
+
+Apa yang berubah?
+
+
+------------------------------------------------------------
+Eksperimen 5
+------------------------------------------------------------
+
+Ubah:
+
+border-radius: 999px;
+
+menjadi:
+
+border-radius: 0;
+
+Bagaimana bentuk badge?
+
+
+------------------------------------------------------------
+Eksperimen 6
+------------------------------------------------------------
+
+Ubah:
+
+transform: translateY(-2px);
+
+menjadi:
+
+transform: translateY(-10px);
+
+Apa yang terjadi ketika cursor berada di atas badge?
+
+
+------------------------------------------------------------
+Eksperimen 7
+------------------------------------------------------------
+
+Hapus:
+
+transition: 0.2s;
+
+Kemudian hover card atau badge.
+
+Bandingkan dengan kondisi sebelumnya.
+
+
+------------------------------------------------------------
+Eksperimen 8
+------------------------------------------------------------
+
+Ubah:
+
+gap: 25px;
+
+pada navbar menjadi:
+
+gap: 5px;
+
+Lihat jarak antar link.
+
+
+------------------------------------------------------------
+Eksperimen 9
+------------------------------------------------------------
+
+Ubah:
+
+max-width: 1100px;
+
+menjadi:
+
+max-width: 700px;
+
+Lihat bagaimana lebar konten berubah.
+
+
+------------------------------------------------------------
+Eksperimen 10
+------------------------------------------------------------
+
+Ubah:
+
+@media (max-width: 700px)
+
+menjadi:
+
+@media (max-width: 1200px)
+
+Kemudian ubah ukuran browser.
+
+Perhatikan kapan aturan responsive mulai aktif.
+
+
+============================================================
+49. TARGET PEMAHAMAN CSS
+============================================================
+
+Aku tidak harus menghafal semua property CSS.
+
+Aku mulai memahami CSS jika sudah bisa:
+
+1. Membaca selector dan mengetahui elemen mana yang terkena.
+
+2. Membedakan:
+   element selector
+   class selector
+   ID selector
+
+3. Memahami property dan value.
+
+4. Memahami margin dan padding.
+
+5. Memahami display flex.
+
+6. Memahami gap.
+
+7. Memahami width dan height.
+
+8. Memahami color dan background.
+
+9. Memahami border dan border-radius.
+
+10. Memahami :hover.
+
+11. Memahami transition.
+
+12. Memahami transform.
+
+13. Memahami media query.
+
+14. Bisa melihat HTML lalu mencari CSS yang mengatur
+    elemen tersebut.
+
+15. Bisa mengubah CSS dan memprediksi hasilnya.
+
+
+============================================================
+KESIMPULAN BELAJAR CSS HARI INI
+============================================================
+
+Hari ini aku mulai memahami bahwa CSS bukan sekadar kumpulan
+kode untuk membuat website menjadi bagus.
+
+CSS bekerja dengan pola:
+
+SELECTOR
+    ↓
+PROPERTY
+    ↓
+VALUE
+
+Contoh:
+
+.skills-list span {
+    gap: 8px;
+}
+
+.skills-list span
+= selector
+
+gap
+= property
+
+8px
+= value
+
+
+Aku juga mulai memahami bahwa CSS sangat berkaitan dengan HTML.
+
+HTML:
+
+<span class="skills-list">
+
+CSS:
+
+.skills-list {
+    display: flex;
+}
+
+
+HTML menentukan elemen dan identitasnya.
+
+CSS menggunakan identitas tersebut untuk mengatur tampilannya.
+
+
+Konsep penting yang sudah dipelajari:
+
+HTML
+= struktur
+
+CSS
+= tampilan
+
+class
+= selector kelompok
+
+id
+= selector identitas spesifik
+
+margin
+= jarak luar
+
+padding
+= jarak dalam
+
+border
+= garis pembatas
+
+display: flex
+= mengatur layout menggunakan Flexbox
+
+gap
+= jarak antar item
+
+:hover
+= kondisi ketika cursor berada di atas elemen
+
+transition
+= membuat perubahan style menjadi halus
+
+transform
+= mengubah posisi/bentuk elemen
+
+@media
+= membuat tampilan menyesuaikan kondisi layar
+
+
+============================================================
+CARA BELAJAR SELANJUTNYA
+============================================================
+
+Aku tidak perlu langsung menghafalkan seluruh CSS.
+
+Lebih baik:
+
+1. Ubah satu property.
+2. Commit.
+3. Lihat hasil website.
+4. Bandingkan dengan kode.
+5. Tebak penyebabnya.
+6. Coba ubah lagi.
+7. Catat kalau menemukan konsep baru.
+
+Dengan cara ini aku bisa memahami CSS melalui eksperimen
+langsung pada project portfolio sendiri.
+
+Target berikutnya adalah bisa membaca CSS sendiri dan mulai
+menulis atau mengubah style tanpa harus selalu menyalin kode.
+
+
+============================================================
+END OF CSS DIARY
+============================================================
