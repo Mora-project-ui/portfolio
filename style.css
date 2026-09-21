@@ -168,15 +168,13 @@ article a {
 
 /* SKILLS */
 
-#skills ul {
+.skills-list {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-
-    list-style: none;
 }
 
-#skills li {
+.skills-list span {
     padding: 10px 16px;
 
     background: #171a21;
