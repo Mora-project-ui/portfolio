@@ -175,13 +175,25 @@ article a {
 }
 
 .skills-list span {
-    padding: 10px 16px;
+    display: inline-block;
+
+    padding: 8px 14px;
 
     background: #171a21;
     border: 1px solid #272c35;
-    border-radius: 8px;
+    border-radius: 999px;
 
     color: #c9ced6;
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.2s;
+}
+
+.skills-list span:hover {
+    color: #20b878;
+    border-color: #20b878;
+    transform: translateY(-2px);
 }
 
 
