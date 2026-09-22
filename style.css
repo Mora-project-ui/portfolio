@@ -163,7 +163,7 @@ article {
 
 article:hover {
     transform: translateY(-4px);
-    border-color: #20b878;
+    border-color: red;
 }
 
 article h3 {
@@ -177,7 +177,7 @@ article p {
 }
 
 article a {
-    color: #20b878;
+    color: red;
     text-decoration: none;
 }
 
