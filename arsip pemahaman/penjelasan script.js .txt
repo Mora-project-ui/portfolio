@@ -1,0 +1,504 @@
+========================================
+JAVASCRIPT - SCROLL REVEAL ANIMATION
+========================================
+
+Tujuan:
+Membuat elemen seperti project card, badge Skills & Tools,
+dan link Contact muncul ketika elemen tersebut masuk ke layar
+saat user melakukan scroll.
+
+Konsep utama:
+
+HTML       = struktur elemen
+CSS        = tampilan dan animasi
+JavaScript = mengatur perilaku/kapan animasi dijalankan
+
+
+----------------------------------------
+1. MEMILIH ELEMEN YANG AKAN DIANIMASIKAN
+----------------------------------------
+
+Kode:
+
+const animatedElements = document.querySelectorAll(
+    ".project-card, .skills-list span, .contact-links a"
+);
+
+
+Penjelasan:
+
+document
+    Mengacu pada seluruh halaman HTML yang sedang dibuka.
+
+querySelectorAll()
+    Digunakan untuk mencari SEMUA elemen HTML yang cocok
+    dengan selector yang diberikan.
+
+Selector yang digunakan:
+
+.project-card
+    Mencari semua elemen dengan class "project-card".
+
+.skills-list span
+    Mencari semua <span> yang berada di dalam
+    elemen dengan class "skills-list".
+
+.contact-links a
+    Mencari semua <a> yang berada di dalam
+    elemen dengan class "contact-links".
+
+
+Hasil semua elemen tersebut disimpan ke:
+
+animatedElements
+
+
+Gambaran sederhananya:
+
+animatedElements
+│
+├── Project Card
+├── Project Card
+├── Project Card
+├── Linux
+├── VS Code
+├── Git
+├── Kotlin
+├── Android Development
+├── HTML & CSS
+├── WhatsApp
+├── Instagram
+├── YouTube
+├── GitHub
+└── Lynk
+
+
+Jadi bagian ini tugasnya hanya:
+
+"Carikan semua elemen yang ingin saya beri animasi."
+
+
+----------------------------------------
+2. MEMBUAT PENGAWAS ELEMEN
+----------------------------------------
+
+Kode:
+
+const observer = new IntersectionObserver((entries) => {
+
+
+Penjelasan:
+
+IntersectionObserver
+    Digunakan untuk mengawasi apakah suatu elemen
+    sudah masuk ke area layar (viewport).
+
+Viewport
+    Bagian halaman yang sedang terlihat oleh user.
+
+Contoh:
+
+User sedang berada di bagian About.
+
+Project card yang jauh di bawah:
+
+    [ Project Card ]
+          ↓
+       belum terlihat
+
+Ketika user scroll:
+
+    [ Project Card ]
+          ↓
+       masuk layar
+
+IntersectionObserver dapat mendeteksi perubahan tersebut.
+
+
+Jadi tugas bagian ini:
+
+"Pantau elemen dan beri tahu JavaScript ketika elemen
+masuk ke layar."
+
+
+----------------------------------------
+3. MEMERIKSA SETIAP ELEMEN YANG TERDETEKSI
+----------------------------------------
+
+Kode:
+
+entries.forEach(entry => {
+
+
+Penjelasan:
+
+entries
+    Berisi elemen yang sedang diberitahukan oleh
+    IntersectionObserver.
+
+forEach()
+    Berarti lakukan sesuatu untuk setiap elemen.
+
+entry
+    Mewakili satu elemen yang sedang diperiksa.
+
+
+Sederhananya:
+
+Untuk setiap elemen yang terdeteksi,
+lakukan pengecekan.
+
+
+----------------------------------------
+4. MENGECEK APAKAH ELEMEN SUDAH MASUK LAYAR
+----------------------------------------
+
+Kode:
+
+if (entry.isIntersecting) {
+
+
+Penjelasan:
+
+entry.isIntersecting
+    Mengecek apakah elemen sedang masuk atau terlihat
+    di dalam viewport.
+
+Jika nilainya:
+
+true
+    Elemen sudah masuk ke layar.
+
+false
+    Elemen belum masuk ke layar.
+
+
+Contoh:
+
+User scroll ke bawah.
+
+Linux badge masuk layar.
+
+isIntersecting:
+
+true
+
+
+JavaScript kemudian menjalankan kode di dalam
+if tersebut.
+
+
+----------------------------------------
+5. MENAMBAHKAN CLASS "SHOW"
+----------------------------------------
+
+Kode:
+
+entry.target.classList.add("show");
+
+
+Penjelasan:
+
+entry.target
+    Elemen yang berhasil terdeteksi oleh observer.
+
+classList
+    Kumpulan class yang dimiliki oleh elemen tersebut.
+
+add("show")
+    Menambahkan class "show" ke elemen.
+
+
+Contoh sebelum terdeteksi:
+
+<span>
+    Linux
+</span>
+
+
+Setelah masuk layar:
+
+<span class="show">
+    Linux
+</span>
+
+
+JavaScript tidak membuat animasinya secara langsung.
+
+JavaScript hanya menambahkan class "show".
+
+CSS-lah yang menentukan apa yang terjadi setelah
+class "show" ditambahkan.
+
+
+----------------------------------------
+6. CSS YANG MENJALANKAN ANIMASI
+----------------------------------------
+
+Contoh CSS:
+
+.skills-list span,
+.contact-links a {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.skills-list span.show,
+.contact-links a.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+Sebelum class "show":
+
+opacity: 0;
+    Elemen transparan.
+
+transform: translateY(30px);
+    Elemen berada 30px lebih ke bawah.
+
+
+Setelah JavaScript menambahkan:
+
+class="show"
+
+
+CSS berubah menjadi:
+
+opacity: 1;
+    Elemen menjadi terlihat.
+
+transform: translateY(0);
+    Elemen kembali ke posisi normal.
+
+
+Karena ada:
+
+transition: 0.6s ease;
+
+perubahan tersebut terjadi secara halus.
+
+
+Jadi:
+
+JavaScript
+    ↓
+Menambahkan class "show"
+
+CSS
+    ↓
+Melihat class "show"
+
+CSS
+    ↓
+Menjalankan perubahan tampilan/animasi
+
+
+----------------------------------------
+7. MEMASANG OBSERVER KE SEMUA ELEMEN
+----------------------------------------
+
+Kode:
+
+animatedElements.forEach(element => {
+    observer.observe(element);
+});
+
+
+Penjelasan:
+
+animatedElements
+    Berisi semua elemen yang ingin dianimasikan.
+
+forEach()
+    Mengambil elemen satu per satu.
+
+observer.observe(element)
+    Memerintahkan IntersectionObserver untuk
+    mengawasi elemen tersebut.
+
+
+Artinya:
+
+"Observer, awasi semua project card,
+semua skill badge, dan semua link contact."
+
+
+----------------------------------------
+8. ALUR KERJA KESELURUHAN
+----------------------------------------
+
+Ketika website dibuka:
+
+HTML
+ ↓
+Menyediakan project card, skill badge,
+dan contact link.
+ ↓
+JavaScript mencari semua elemen tersebut.
+ ↓
+IntersectionObserver mulai mengawasi.
+ ↓
+User melakukan scroll.
+ ↓
+Elemen masuk ke viewport.
+ ↓
+IntersectionObserver mendeteksi.
+ ↓
+isIntersecting menjadi true.
+ ↓
+JavaScript menambahkan class "show".
+ ↓
+CSS mendeteksi class "show".
+ ↓
+opacity berubah dari 0 menjadi 1.
+ ↓
+transform berubah dari translateY(30px)
+menjadi translateY(0).
+ ↓
+transition membuat perubahan menjadi halus.
+ ↓
+Elemen terlihat seperti muncul dari bawah.
+
+
+----------------------------------------
+9. PEMBAGIAN TUGAS HTML, CSS, DAN JAVASCRIPT
+----------------------------------------
+
+HTML:
+
+Bertugas membuat struktur.
+
+Contoh:
+
+<span>Linux</span>
+
+
+CSS:
+
+Bertugas menentukan tampilan.
+
+Contoh:
+
+.skills-list span.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+JavaScript:
+
+Bertugas menentukan kapan class "show"
+ditambahkan.
+
+Contoh:
+
+entry.target.classList.add("show");
+
+
+Kesimpulan:
+
+HTML = "Apa yang ada di halaman?"
+
+CSS = "Bagaimana tampilannya?"
+
+JavaScript = "Bagaimana halaman tersebut berperilaku?"
+
+
+----------------------------------------
+10. KENAPA TIDAK CUKUP PAKAI CSS SAJA?
+----------------------------------------
+
+CSS bisa membuat animasi.
+
+Namun pada kasus ini kita ingin animasi berjalan
+ketika elemen masuk ke layar saat user melakukan scroll.
+
+JavaScript digunakan untuk mendeteksi kondisi tersebut.
+
+Jadi CSS menangani animasinya,
+sedangkan JavaScript menjadi pemicu berdasarkan
+posisi elemen di layar.
+
+
+----------------------------------------
+11. HAL YANG BISA DIEKSPERIMENKAN
+----------------------------------------
+
+Coba ubah:
+
+transform: translateY(30px);
+
+
+Menjadi:
+
+transform: translateX(-50px);
+
+Hasil:
+Elemen muncul dari arah kiri.
+
+
+Atau:
+
+transform: translateX(50px);
+
+Hasil:
+Elemen muncul dari arah kanan.
+
+
+Coba ubah:
+
+transition: opacity 0.6s ease, transform 0.6s ease;
+
+
+Menjadi:
+
+transition: opacity 1s ease, transform 1s ease;
+
+Hasil:
+Animasi menjadi lebih lambat.
+
+
+Coba ubah:
+
+translateY(30px);
+
+Menjadi:
+
+translateY(100px);
+
+Hasil:
+Elemen mulai dari posisi yang lebih jauh.
+
+
+----------------------------------------
+KESIMPULAN
+----------------------------------------
+
+Kode JavaScript ini bukan "pembuat animasi".
+
+Tugas JavaScript dalam sistem ini adalah:
+
+1. Mencari elemen yang ingin dianimasikan.
+2. Mengawasi elemen menggunakan IntersectionObserver.
+3. Mendeteksi ketika elemen masuk ke layar.
+4. Menambahkan class "show".
+5. Membiarkan CSS menjalankan animasinya.
+
+Pola penting yang perlu dipahami:
+
+Cari elemen
+    ↓
+Pantau kondisi
+    ↓
+Kondisi terpenuhi
+    ↓
+Ubah class/element
+    ↓
+CSS memberikan tampilan baru
+
+
+Ini merupakan contoh sederhana bagaimana JavaScript
+memberikan perilaku/interaksi pada website.
