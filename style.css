@@ -209,7 +209,7 @@ article a {
 }
 
 .skills-list span:hover {
-    color: #20b878;
+    color: red;
     border-color: red;
     transform: translateY(-2px);
 }
