@@ -249,17 +249,17 @@ article a {
 
 .contact-links span:hover {
     color: #FFFFFF;
-    border-color: #20b878;
+    border-color: red;
     transform: translateY(-2px);
 }
 
 .contact-links a {
-    color: red;
+    color: #FFFFFF;
     text-decoration: none;
 }
 
 .contact-links a:hover {
-    color: #FFFFFF;
+    color: red;
 }
 
 .contact-links img {
