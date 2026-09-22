@@ -223,12 +223,40 @@ article a {
 
 /* CONTACT */
 
-#contact a {
-    display: inline-block;
-    margin: 5px 0;
+.contact-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
 
+.contact-list span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    background: #171a21;
+    border: 1px solid #272c35;
+    border-radius: 999px;
+
+    color: #c9ced6;
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.2s;
+}
+
+.contact-list span:hover {
     color: #20b878;
-    text-decoration: none;
+    border-color: #20b878;
+    transform: translateY(-2px);
+}
+
+.contact-list img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }
 
 
