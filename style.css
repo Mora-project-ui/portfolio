@@ -248,7 +248,8 @@ article a {
 }
 
 .contact-links span:hover {
-    color: #20b878;
+    color: #FFFFFF;
+    text-decoration: none;
     border-color: #20b878;
     transform: translateY(-2px);
 }
