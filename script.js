@@ -1,4 +1,6 @@
-const cards = document.querySelectorAll(".project-card");
+const animatedElements = document.querySelectorAll(
+    ".project-card, .skills-list span, .contact-links a"
+);
 
 const observer = new IntersectionObserver((entries) => {
 
@@ -12,4 +14,6 @@ const observer = new IntersectionObserver((entries) => {
 
 });
 
-cards.forEach(card => observer.observe(card));
+animatedElements.forEach(element => {
+    observer.observe(element);
+});
