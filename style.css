@@ -223,13 +223,13 @@ article a {
 
 /* CONTACT */
 
-.contact-list {
+.contact-links {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
 }
 
-.contact-list span {
+.contact-links span {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -247,13 +247,13 @@ article a {
     transition: 0.2s;
 }
 
-.contact-list span:hover {
+.contact-links span:hover {
     color: #20b878;
     border-color: #20b878;
     transform: translateY(-2px);
 }
 
-.contact-list img {
+.contact-links img {
     width: 20px;
     height: 20px;
     object-fit: contain;
