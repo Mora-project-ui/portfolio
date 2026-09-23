@@ -168,21 +168,6 @@ main {
 }
 
 
-/* profile image */
-
-.profile-image {
-    width: 140px;
-    height: 140px;
-
-    object-fit: cover;
-
-    border-radius: 50%;
-
-    border: 3px solid var(--accent);
-
-    margin-bottom: 25px;
-}
-
 
 /* SECTION */
 
@@ -381,6 +366,25 @@ footer {
         padding: 70px 0;
     }
 
+ /* HERO MOBILE */
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text {
+        margin: auto;
+    }
+
+    .hero-image {
+        order: -1;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+    
 }
 
 
