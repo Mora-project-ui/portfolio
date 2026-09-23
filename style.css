@@ -19,8 +19,8 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    background: #0f1115;
-    color: #ffffff;
+    background: var(--bg);
+    color: var(--text);
     line-height: 1.6;
 }
 
@@ -47,7 +47,7 @@ nav {
 }
 
 nav h2 {
-    color: red;
+    color: var(--accent);
 }
 
 nav div {
@@ -56,13 +56,13 @@ nav div {
 }
 
 nav a {
-    color: #ffffff;
+    color: var(--text);
     text-decoration: none;
     transition: 0.2s;
 }
 
 nav a:hover {
-    color: red;
+    color: var(--accent);
 }
 
 
@@ -86,7 +86,7 @@ main {
 }
 
 #hero p:first-child {
-    color: #20b878;
+    color: var(--accent);
     font-size: 18px;
 }
 
@@ -97,7 +97,7 @@ main {
 }
 
 #hero h2 {
-    color: #a7adb8;
+    color: var(--muted);
     font-size: 25px;
     font-weight: normal;
 }
@@ -120,7 +120,7 @@ main {
 
     border-radius: 50%;
 
-    border: 3px solid red;
+    border: 3px solid var(--accent);
 
     margin-bottom: 25px;
 }
@@ -135,7 +135,7 @@ section {
 section > h2 {
     font-size: 32px;
     margin-bottom: 30px;
-    color: red;
+    color: var(--accent);
 }
 
 
@@ -163,8 +163,8 @@ section > h2 {
 article {
     padding: 25px;
 
-    background: #171a21;
-    border: 1px solid #272c35;
+    background: var(--card);
+    border: 1px solid var(--border);
     border-radius: 12px;
 
     transition: 0.2s;
@@ -172,7 +172,7 @@ article {
 
 article:hover {
     transform: translateY(-4px);
-    border-color: red;
+    border-color: var(--accent);
 }
 
 article h3 {
@@ -186,7 +186,7 @@ article p {
 }
 
 article a {
-    color: red;
+    color: var(--accent);
     text-decoration: none;
 }
 
@@ -206,8 +206,8 @@ article a {
 
     padding: 8px 14px;
 
-    background: #171a21;
-    border: 1px solid #272c35;
+    background: var(--card);
+    border: 1px solid var(--border);
     border-radius: 999px;
 
     color: #c9ced6;
@@ -218,8 +218,8 @@ article a {
 }
 
 .skills-list span:hover {
-    color: red;
-    border-color: red;
+    color: var(--accent);
+    border-color: var(--accent);
     transform: translateY(-2px);
 }
 
@@ -245,8 +245,8 @@ article a {
 
     padding: 8px 14px;
 
-    background: #171a21;
-    border: 1px solid #272c35;
+    background: var(--card);
+    border: 1px solid var(--border);
     border-radius: 999px;
 
     color: #c9ced6;
@@ -257,18 +257,18 @@ article a {
 }
 
 .contact-links span:hover {
-    color: #FFFFFF;
-    border-color: red;
+    color: var(--text);
+    border-color: var(--accent);
     transform: translateY(-2px);
 }
 
 .contact-links a {
-    color: #FFFFFF;
+    color: var(--text);
     text-decoration: none;
 }
 
 .contact-links a:hover {
-    color: red;
+    color: var(--accent);
 }
 
 .contact-links img {
