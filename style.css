@@ -446,12 +446,20 @@ footer {
 .project-card {
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        border-color 0.3s ease;
 }
 
 .project-card.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+.project-card.show:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
 }
 
 
