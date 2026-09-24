@@ -308,15 +308,15 @@ section > h2::before {
 }
 
 
-/* SKILLS */
+/* TECHNOLOGIES */
 
-.skills-list {
+.Technologies-list {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
 }
 
-.skills-list span {
+.Technologies-list span {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -334,13 +334,13 @@ section > h2::before {
     transition: 0.2s;
 }
 
-.skills-list span:hover {
+.Technologies-list span:hover {
     color: var(--accent);
     border-color: var(--accent);
     transform: translateY(-2px);
 }
 
-.skills-list img {
+.Technologies-list img {
     width: 20px;
     height: 20px;
     object-fit: contain;
