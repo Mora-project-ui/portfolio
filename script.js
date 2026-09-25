@@ -1,5 +1,5 @@
 const animatedElements = document.querySelectorAll(
-    ".project-card, .Technologies-list span, .contact-links span"
+    ".project-card, .Technologies-list span, .contact-links span, .reveal-section"
 );
 
 const observer = new IntersectionObserver((entries) => {
