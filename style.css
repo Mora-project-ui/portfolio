@@ -501,6 +501,46 @@ footer {
 }
 
 
+/* HERO INTRO */
+
+.hero-text {
+    animation: heroText 0.8s ease forwards;
+}
+
+.hero-image {
+    animation: heroImage 0.8s ease 0.15s forwards;
+    opacity: 0;
+}
+
+@keyframes heroText {
+
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes heroImage {
+
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
 /* SCROLL ANIMATION - SECTIONS */
 
 .reveal-section {
