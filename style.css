@@ -72,15 +72,15 @@ body::before {
 @keyframes auroraMove {
 
     0% {
-        transform: translate(-5%, -3%) rotate(0deg) scale(1);
+        transform: translate(-8%, -5%) rotate(0deg) scale(1);
     }
 
     50% {
-        transform: translate(5%, 4%) rotate(8deg) scale(1.08);
+        transform: translate(8%, 5%) rotate(10deg) scale(1.12);
     }
 
     100% {
-        transform: translate(-3%, 6%) rotate(-6deg) scale(1.12);
+        transform: translate(-5%, 8%) rotate(-8deg) scale(1.18);
     }
 
 }
