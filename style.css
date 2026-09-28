@@ -265,6 +265,15 @@ section > h2::before {
 }
 
 
+/* PROJECT LIST */
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+
 /* PROJECT CARD */
 
 .project-card {
