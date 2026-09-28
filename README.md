@@ -2,3 +2,9 @@
 <h3 align="center">Ini adalah website portofolio pertama saya</h3>
 
 [Website portofolio saya](https://mora-project-ui.github.io/portfolio/)
+
+# 🌌 Preview my portfolio
+
+A fantasy book & galaxy parchment styled GRUB bootloader theme for Linux.
+
+![Preview](preview.png)
