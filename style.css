@@ -92,9 +92,23 @@ header {
     top: 0;
     z-index: 1000;
 
-    background: rgba(15, 17, 21, 0.9);
-    border-bottom: 1px solid #252932;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+
     backdrop-filter: blur(10px);
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+header.scrolled {
+    background: rgba(15, 17, 21, 0.92);
+    border-bottom-color: var(--border);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
 }
 
 nav {
