@@ -7,4 +7,4 @@
 
 A fantasy book & galaxy parchment styled GRUB bootloader theme for Linux.
 
-![Preview](preview.png)
+![Preview](https://raw.githubusercontent.com/Mora-project-ui/fantasi-grub-theme/refs/heads/main/preview.png)
