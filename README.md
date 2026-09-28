@@ -4,4 +4,4 @@
 [Website portofolio saya](https://mora-project-ui.github.io/portfolio/)
 
 # 🌌 Preview my portfolio
-![Preview](https://raw.githubusercontent.com/Mora-project-ui/fantasi-grub-theme/refs/heads/main/preview.png)
+![Preview](https://raw.githubusercontent.com/Mora-project-ui/portfolio/refs/heads/main/assets/images/preview.png)
