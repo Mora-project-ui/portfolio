@@ -32,6 +32,7 @@ window.addEventListener("scroll", () => {
 
 const music = document.querySelector("#background-music");
 const musicToggle = document.querySelector("#music-toggle");
+const musicIcon = document.querySelector(".music-icon");
 
 musicToggle.addEventListener("click", () => {
 
@@ -39,14 +40,14 @@ musicToggle.addEventListener("click", () => {
 
         music.play();
 
-        musicToggle.textContent = "🔊";
+        musicIcon.textContent = "🔊";
         musicToggle.classList.add("playing");
 
     } else {
 
         music.pause();
 
-        musicToggle.textContent = "🔇";
+        musicIcon.textContent = "🔇";
         musicToggle.classList.remove("playing");
 
     }
