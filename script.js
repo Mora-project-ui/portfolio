@@ -40,14 +40,14 @@ musicToggle.addEventListener("click", () => {
 
         music.play();
 
-        musicIcon.textContent = "🔊ON";
+        musicIcon.textContent = "♫ON";
         musicToggle.classList.add("playing");
 
     } else {
 
         music.pause();
 
-        musicIcon.textContent = "🔇OFF";
+        musicIcon.textContent = "♫OFF";
         musicToggle.classList.remove("playing");
 
     }
