@@ -88,14 +88,19 @@ body::before {
 /* MUSIC BUTTON */
 
 #music-toggle {
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--muted);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 
-    width: 34px;
+    width: 58px;
     height: 34px;
 
-    border-radius: 50%;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+
+    color: var(--muted);
 
     cursor: pointer;
 
@@ -114,6 +119,61 @@ body::before {
 #music-toggle.playing {
     color: var(--accent);
     border-color: var(--accent);
+}
+
+.music-icon {
+    font-size: 15px;
+    line-height: 1;
+}
+
+.equalizer {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+
+    height: 16px;
+}
+
+.equalizer i {
+    display: block;
+
+    width: 2px;
+    height: 5px;
+
+    background: currentColor;
+    border-radius: 2px;
+
+    animation: equalizer 0.8s ease-in-out infinite alternate;
+
+    animation-play-state: paused;
+}
+
+.equalizer i:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.equalizer i:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.equalizer i:nth-child(3) {
+    animation-delay: 0.1s;
+}
+
+#music-toggle.playing .equalizer i {
+    animation-play-state: running;
+}
+
+@keyframes equalizer {
+
+    0% {
+        height: 4px;
+    }
+
+    100% {
+        height: 15px;
+    }
+
 }
 
 /* NAVBAR */
