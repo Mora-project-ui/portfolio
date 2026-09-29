@@ -675,6 +675,26 @@ nav a {
     font-size: clamp(10px, 2.7vw, 13px);
 }
 
+/* MUSIC-TOGGLE */
+
+    #music-toggle {
+    width: 42px;
+    height: 28px;
+
+    gap: 3px;
+}
+
+.music-icon {
+    font-size: 12px;
+}
+
+.equalizer {
+    height: 13px;
+}
+
+.equalizer i {
+    width: 2px;
+}
 
     /* MAIN */
 
