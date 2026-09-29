@@ -29,3 +29,26 @@ window.addEventListener("scroll", () => {
     }
 
 });
+
+const music = document.querySelector("#background-music");
+const musicToggle = document.querySelector("#music-toggle");
+
+musicToggle.addEventListener("click", () => {
+
+    if (music.paused) {
+
+        music.play();
+
+        musicToggle.textContent = "🔊";
+        musicToggle.classList.add("playing");
+
+    } else {
+
+        music.pause();
+
+        musicToggle.textContent = "🔇";
+        musicToggle.classList.remove("playing");
+
+    }
+
+});
