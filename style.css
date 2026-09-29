@@ -176,6 +176,21 @@ body::before {
 
 }
 
+/* SCROLL PROGRESS */
+
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 0%;
+    height: 2px;
+
+    background: var(--accent);
+
+    z-index: 2000;
+}
+
 /* NAVBAR */
 
 header {
