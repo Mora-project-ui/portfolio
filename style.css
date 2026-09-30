@@ -85,6 +85,18 @@ body::before {
 
 }
 
+/* MENU-TOGGLE */
+
+#menu-toggle {
+    background: transparent;
+    border: none;
+
+    color: var(--text);
+    font-size: 24px;
+
+    cursor: pointer;
+}
+
 /* MUSIC BUTTON */
 
 #music-toggle {
