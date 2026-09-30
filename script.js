@@ -77,18 +77,11 @@ const menuToggle = document.querySelector("#menu-toggle");
 const menuClose = document.querySelector("#menu-close");
 const navMenu = document.querySelector(".nav-menu");
 
-let menuOpenScroll = 0;
-
 
 // OPEN MENU
 menuToggle.addEventListener("click", () => {
 
-    menuOpenScroll = window.scrollY;
-
     navMenu.classList.add("open");
-
-    navMenu.style.transform =
-        "translateX(0) translateY(0)";
 
 });
 
@@ -97,24 +90,6 @@ menuToggle.addEventListener("click", () => {
 menuClose.addEventListener("click", () => {
 
     navMenu.classList.remove("open");
-
-    navMenu.style.transform = "";
-
-});
-
-
-// MAKE MENU FOLLOW PAGE SCROLL
-window.addEventListener("scroll", () => {
-
-    if (!navMenu.classList.contains("open")) {
-        return;
-    }
-
-    const scrollDifference =
-        window.scrollY - menuOpenScroll;
-
-    navMenu.style.transform =
-        `translateX(0) translateY(${-scrollDifference}px)`;
 
 });
 
@@ -133,8 +108,11 @@ window.addEventListener("scroll", () => {
         document.documentElement.scrollHeight - window.innerHeight;
 
     if (documentHeight <= 0) {
+
         scrollProgress.style.width = "0%";
+
         return;
+
     }
 
     const scrollPercent =
