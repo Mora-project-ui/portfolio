@@ -135,26 +135,13 @@ body::before {
 
 header {
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 100%;
-
     z-index: 1000;
 
-    background: rgba(13, 15, 18, 0.72);
-
+    background: transparent;
     border-bottom: 1px solid transparent;
-
-    /*
-     * Sengaja TIDAK menggunakan
-     * backdrop-filter di sini.
-     *
-     * Karena .nav-menu berada di
-     * dalam header dan harus benar-benar
-     * fixed terhadap viewport.
-     */
 
     transition:
         background 0.3s ease,
@@ -162,13 +149,11 @@ header {
         box-shadow 0.3s ease;
 }
 
+/* Saat halaman discroll */
 header.scrolled {
-    background: rgba(15, 17, 21, 0.92);
-
+    background: rgba(13, 15, 18, 0.72);
     border-bottom-color: var(--border);
-
-    box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 
