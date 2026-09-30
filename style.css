@@ -28,6 +28,8 @@
 
 html {
     scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -39,6 +41,7 @@ body {
     color: var(--text);
     line-height: 1.6;
 
+    max-width: 100%;
     overflow-x: hidden;
 }
 
@@ -72,7 +75,8 @@ body::before {
 
     filter: blur(55px);
 
-    animation: auroraMove 12s ease-in-out infinite alternate;
+    animation:
+        auroraMove 12s ease-in-out infinite alternate;
 
     pointer-events: none;
     z-index: -1;
@@ -80,15 +84,24 @@ body::before {
 
 @keyframes auroraMove {
     0% {
-        transform: translate(-8%, -5%) rotate(0deg) scale(1);
+        transform:
+            translate(-8%, -5%)
+            rotate(0deg)
+            scale(1);
     }
 
     50% {
-        transform: translate(8%, 5%) rotate(10deg) scale(1.12);
+        transform:
+            translate(8%, 5%)
+            rotate(10deg)
+            scale(1.12);
     }
 
     100% {
-        transform: translate(-5%, 8%) rotate(-8deg) scale(1.18);
+        transform:
+            translate(-5%, 8%)
+            rotate(-8deg)
+            scale(1.18);
     }
 }
 
@@ -116,6 +129,7 @@ body::before {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     gap: 5px;
 
     width: 58px;
@@ -156,6 +170,7 @@ body::before {
 .equalizer {
     display: flex;
     align-items: center;
+
     gap: 2px;
 
     height: 16px;
@@ -170,7 +185,9 @@ body::before {
     background: currentColor;
     border-radius: 2px;
 
-    animation: equalizer 0.8s ease-in-out infinite alternate;
+    animation:
+        equalizer 0.8s ease-in-out infinite alternate;
+
     animation-play-state: paused;
 }
 
@@ -232,6 +249,7 @@ header {
     z-index: 1000;
 
     background: transparent;
+
     border-bottom: 1px solid transparent;
 
     backdrop-filter: blur(10px);
@@ -255,6 +273,7 @@ nav {
     max-width: 1100px;
 
     margin: auto;
+
     padding: 18px 30px;
 
     display: flex;
@@ -279,7 +298,9 @@ nav a:hover {
 }
 
 
-/* NAV CONTROLS */
+/* =========================
+   NAV CONTROLS
+========================= */
 
 .nav-controls {
     display: flex;
@@ -289,7 +310,9 @@ nav a:hover {
 }
 
 
-/* SIDE MENU */
+/* =========================
+   SIDE MENU
+========================= */
 
 .nav-menu {
     position: fixed;
@@ -298,6 +321,8 @@ nav a:hover {
     right: 0;
 
     width: 280px;
+    max-width: 85vw;
+
     height: 100vh;
 
     padding: 100px 30px 30px;
@@ -313,7 +338,8 @@ nav a:hover {
 
     transform: translateX(100%);
 
-    transition: transform 0.3s ease;
+    transition:
+        transform 0.3s ease;
 
     z-index: 999;
 }
@@ -345,7 +371,9 @@ nav a:hover {
 }
 
 
-/* CLOSE BUTTON */
+/* =========================
+   CLOSE BUTTON
+========================= */
 
 #menu-close {
     align-self: flex-end;
@@ -474,6 +502,7 @@ main {
 
 .hero-image {
     display: flex;
+
     justify-content: center;
 }
 
@@ -543,7 +572,8 @@ section > h2::before {
 .project-list {
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        repeat(2, 1fr);
 
     gap: 25px;
 }
@@ -571,7 +601,9 @@ section > h2::before {
 }
 
 
-/* PROJECT IMAGE */
+/* =========================
+   PROJECT IMAGE
+========================= */
 
 .project-image {
     position: relative;
@@ -587,7 +619,8 @@ section > h2::before {
 
     object-fit: cover;
 
-    transition: transform 0.4s ease;
+    transition:
+        transform 0.4s ease;
 }
 
 .project-card:hover {
@@ -615,7 +648,8 @@ section > h2::before {
 
     opacity: 0.7;
 
-    transition: opacity 0.3s ease;
+    transition:
+        opacity 0.3s ease;
 }
 
 .project-card:hover .project-image::after {
@@ -623,7 +657,9 @@ section > h2::before {
 }
 
 
-/* PROJECT CONTENT */
+/* =========================
+   PROJECT CONTENT
+========================= */
 
 .project-content {
     padding: 25px;
@@ -642,10 +678,13 @@ section > h2::before {
 }
 
 
-/* PROJECT TAGS */
+/* =========================
+   PROJECT TAGS
+========================= */
 
 .project-tags {
     display: flex;
+
     flex-wrap: wrap;
 
     gap: 8px;
@@ -657,6 +696,7 @@ section > h2::before {
     padding: 5px 10px;
 
     border: 1px solid var(--border);
+
     border-radius: 999px;
 
     color: var(--muted);
@@ -665,7 +705,9 @@ section > h2::before {
 }
 
 
-/* PROJECT LINK */
+/* =========================
+   PROJECT LINK
+========================= */
 
 .project-content a {
     display: inline-block;
@@ -674,7 +716,8 @@ section > h2::before {
 
     text-decoration: none;
 
-    transition: transform 0.2s ease;
+    transition:
+        transform 0.2s ease;
 }
 
 .project-content a:hover {
@@ -688,6 +731,7 @@ section > h2::before {
 
 .Technologies-list {
     display: flex;
+
     flex-wrap: wrap;
 
     gap: 12px;
@@ -704,6 +748,7 @@ section > h2::before {
     background: var(--card);
 
     border: 1px solid var(--border);
+
     border-radius: 999px;
 
     color: #c9ced6;
@@ -736,6 +781,7 @@ section > h2::before {
 
 .contact-links {
     display: flex;
+
     flex-wrap: wrap;
 
     gap: 12px;
@@ -752,6 +798,7 @@ section > h2::before {
     background: var(--card);
 
     border: 1px solid var(--border);
+
     border-radius: 999px;
 
     color: #c9ced6;
@@ -826,6 +873,7 @@ footer {
 
 .footer-links {
     display: flex;
+
     justify-content: center;
 
     gap: 20px;
@@ -869,7 +917,8 @@ footer {
     }
 
     nav a {
-        font-size: clamp(10px, 2.7vw, 13px);
+        font-size:
+            clamp(10px, 2.7vw, 13px);
     }
 
 
@@ -903,7 +952,8 @@ footer {
 
         margin: auto;
 
-        padding: 0 clamp(12px, 3vw, 20px);
+        padding:
+            0 clamp(12px, 3vw, 20px);
     }
 
 
@@ -914,7 +964,8 @@ footer {
             minmax(0, 1fr)
             clamp(110px, 28vw, 180px);
 
-        gap: clamp(15px, 4vw, 30px);
+        gap:
+            clamp(15px, 4vw, 30px);
 
         align-items: center;
     }
@@ -939,17 +990,20 @@ footer {
     }
 
     #hero h1 {
-        font-size: clamp(24px, 6vw, 42px);
+        font-size:
+            clamp(24px, 6vw, 42px);
 
         overflow-wrap: anywhere;
     }
 
     #hero h2 {
-        font-size: clamp(14px, 3.5vw, 20px);
+        font-size:
+            clamp(14px, 3.5vw, 20px);
     }
 
     .hero-description {
-        font-size: clamp(12px, 2.8vw, 16px);
+        font-size:
+            clamp(12px, 2.8vw, 16px);
     }
 
     .hero-buttons {
@@ -972,7 +1026,8 @@ footer {
     }
 
     section > h2 {
-        font-size: clamp(24px, 6vw, 32px);
+        font-size:
+            clamp(24px, 6vw, 32px);
 
         margin-bottom: 25px;
     }
@@ -984,7 +1039,8 @@ footer {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
 
-        gap: clamp(10px, 3vw, 25px);
+        gap:
+            clamp(10px, 3vw, 25px);
     }
 
     .project-image img {
@@ -997,31 +1053,37 @@ footer {
     }
 
     .project-content {
-        padding: clamp(10px, 3vw, 25px);
+        padding:
+            clamp(10px, 3vw, 25px);
     }
 
     .project-content h3 {
-        font-size: clamp(14px, 4vw, 22px);
+        font-size:
+            clamp(14px, 4vw, 22px);
     }
 
     .project-content p {
-        font-size: clamp(11px, 2.8vw, 16px);
+        font-size:
+            clamp(11px, 2.8vw, 16px);
     }
 
     .project-tags {
         gap: 4px;
 
-        margin-bottom: clamp(10px, 2.5vw, 20px);
+        margin-bottom:
+            clamp(10px, 2.5vw, 20px);
     }
 
     .project-tags span {
         padding: 3px 6px;
 
-        font-size: clamp(9px, 2.2vw, 12px);
+        font-size:
+            clamp(9px, 2.2vw, 12px);
     }
 
     .project-content a {
-        font-size: clamp(10px, 2.5vw, 16px);
+        font-size:
+            clamp(10px, 2.5vw, 16px);
     }
 
 
@@ -1036,12 +1098,16 @@ footer {
 
         padding: 7px 10px;
 
-        font-size: clamp(11px, 3vw, 14px);
+        font-size:
+            clamp(11px, 3vw, 14px);
     }
 
     .Technologies-list img {
-        width: clamp(16px, 5vw, 20px);
-        height: clamp(16px, 5vw, 20px);
+        width:
+            clamp(16px, 5vw, 20px);
+
+        height:
+            clamp(16px, 5vw, 20px);
     }
 
 
@@ -1056,12 +1122,16 @@ footer {
 
         padding: 7px 10px;
 
-        font-size: clamp(11px, 3vw, 14px);
+        font-size:
+            clamp(11px, 3vw, 14px);
     }
 
     .contact-links img {
-        width: clamp(16px, 5vw, 20px);
-        height: clamp(16px, 5vw, 20px);
+        width:
+            clamp(16px, 5vw, 20px);
+
+        height:
+            clamp(16px, 5vw, 20px);
     }
 
 
@@ -1076,6 +1146,14 @@ footer {
 
         flex-wrap: wrap;
     }
+
+
+    /* SIDE MENU */
+
+    .nav-menu {
+        width: 280px;
+        max-width: 85vw;
+    }
 }
 
 
@@ -1084,11 +1162,13 @@ footer {
 ========================= */
 
 .hero-text {
-    animation: heroText 0.8s ease forwards;
+    animation:
+        heroText 0.8s ease forwards;
 }
 
 .hero-image {
-    animation: heroImage 0.8s ease 0.15s forwards;
+    animation:
+        heroImage 0.8s ease 0.15s forwards;
 
     opacity: 0;
 }
@@ -1098,13 +1178,15 @@ footer {
     from {
         opacity: 0;
 
-        transform: translateX(-30px);
+        transform:
+            translateX(-30px);
     }
 
     to {
         opacity: 1;
 
-        transform: translateX(0);
+        transform:
+            translateX(0);
     }
 }
 
@@ -1113,13 +1195,15 @@ footer {
     from {
         opacity: 0;
 
-        transform: translateX(30px);
+        transform:
+            translateX(30px);
     }
 
     to {
         opacity: 1;
 
-        transform: translateX(0);
+        transform:
+            translateX(0);
     }
 }
 
@@ -1131,7 +1215,8 @@ footer {
 .reveal-section {
     opacity: 0;
 
-    transform: translateY(40px);
+    transform:
+        translateY(40px);
 
     transition:
         opacity 0.8s ease,
@@ -1141,7 +1226,8 @@ footer {
 .reveal-section.show {
     opacity: 1;
 
-    transform: translateY(0);
+    transform:
+        translateY(0);
 }
 
 
@@ -1152,7 +1238,8 @@ footer {
 .project-card {
     opacity: 0;
 
-    transform: translateY(50px);
+    transform:
+        translateY(50px);
 
     transition:
         opacity 0.7s ease,
@@ -1163,11 +1250,13 @@ footer {
 .project-card.show {
     opacity: 1;
 
-    transform: translateY(0);
+    transform:
+        translateY(0);
 }
 
 .project-card.show:hover {
-    transform: translateY(-6px);
+    transform:
+        translateY(-6px);
 
     border-color: var(--accent);
 }
@@ -1182,7 +1271,8 @@ footer {
 .contact-links span {
     opacity: 0;
 
-    transform: translateY(30px);
+    transform:
+        translateY(30px);
 
     transition:
         opacity 0.6s ease,
@@ -1193,7 +1283,8 @@ footer {
 .contact-links span.show {
     opacity: 1;
 
-    transform: translateY(0);
+    transform:
+        translateY(0);
 }
 
 
@@ -1252,16 +1343,4 @@ footer {
 
 .contact-links span:nth-child(5) {
     transition-delay: 1s;
-}
-
-html,
-body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-@media (max-width: 700px) {
-    .nav-menu {
-        max-width: 85vw;
-    }
 }
