@@ -248,6 +248,10 @@ nav div {
     gap: 25px;
 }
 
+.nav-menu {
+    display: none;
+}
+
 nav a {
     color: var(--text);
     text-decoration: none;
