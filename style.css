@@ -252,6 +252,10 @@ nav div {
     display: none;
 }
 
+.nav-menu.open {
+    display: flex;
+}
+
 nav a {
     color: var(--text);
     text-decoration: none;
