@@ -1253,3 +1253,15 @@ footer {
 .contact-links span:nth-child(5) {
     transition-delay: 1s;
 }
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+@media (max-width: 700px) {
+    .nav-menu {
+        max-width: 85vw;
+    }
+}
