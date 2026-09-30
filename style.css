@@ -34,25 +34,21 @@ html {
 
 body {
     position: relative;
-
-    max-width: 100%;
-    overflow-x: hidden;
-
     font-family: Arial, sans-serif;
     background: var(--bg);
-
     color: var(--text);
     line-height: 1.6;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 
 /* =========================
-   AURORA BACKGROUND
+   AURORA
 ========================= */
 
 body::before {
     content: "";
-
     position: fixed;
     inset: -30%;
 
@@ -75,14 +71,15 @@ body::before {
 
     filter: blur(55px);
 
-    animation:
-        auroraMove 12s ease-in-out infinite alternate;
+    animation: auroraMove 12s ease-in-out infinite alternate;
 
     pointer-events: none;
+
     z-index: -1;
 }
 
 @keyframes auroraMove {
+
     0% {
         transform:
             translate(-8%, -5%)
@@ -102,118 +99,6 @@ body::before {
             translate(-5%, 8%)
             rotate(-8deg)
             scale(1.18);
-    }
-}
-
-
-/* =========================
-   MENU TOGGLE
-========================= */
-
-#menu-toggle {
-    background: transparent;
-    border: none;
-
-    color: var(--text);
-    font-size: 24px;
-
-    cursor: pointer;
-}
-
-
-/* =========================
-   MUSIC BUTTON
-========================= */
-
-#music-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 5px;
-
-    width: 58px;
-    height: 34px;
-
-    background: transparent;
-
-    border: 1px solid var(--border);
-    border-radius: 999px;
-
-    color: var(--muted);
-
-    cursor: pointer;
-
-    transition:
-        color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
-}
-
-#music-toggle:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-
-    transform: translateY(-2px);
-}
-
-#music-toggle.playing {
-    color: var(--accent);
-    border-color: var(--accent);
-}
-
-.music-icon {
-    font-size: 15px;
-    line-height: 1;
-}
-
-.equalizer {
-    display: flex;
-    align-items: center;
-
-    gap: 2px;
-
-    height: 16px;
-}
-
-.equalizer i {
-    display: block;
-
-    width: 2px;
-    height: 5px;
-
-    background: currentColor;
-    border-radius: 2px;
-
-    animation:
-        equalizer 0.8s ease-in-out infinite alternate;
-
-    animation-play-state: paused;
-}
-
-.equalizer i:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.equalizer i:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.equalizer i:nth-child(3) {
-    animation-delay: 0.1s;
-}
-
-#music-toggle.playing .equalizer i {
-    animation-play-state: running;
-}
-
-@keyframes equalizer {
-    0% {
-        height: 4px;
-    }
-
-    100% {
-        height: 15px;
     }
 }
 
@@ -242,9 +127,18 @@ body::before {
 ========================= */
 
 header {
-    position: sticky;
+
+    /*
+     * FIXED = selalu menempel
+     * terhadap layar / viewport
+     */
+
+    position: fixed;
 
     top: 0;
+    left: 0;
+
+    width: 100%;
 
     z-index: 1000;
 
@@ -261,6 +155,7 @@ header {
 }
 
 header.scrolled {
+
     background: rgba(15, 17, 21, 0.92);
 
     border-bottom-color: var(--border);
@@ -269,7 +164,9 @@ header.scrolled {
         0 8px 25px rgba(0, 0, 0, 0.25);
 }
 
+
 nav {
+
     position: relative;
 
     max-width: 1100px;
@@ -279,7 +176,9 @@ nav {
     padding: 18px 30px;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 }
 
@@ -305,10 +204,143 @@ nav a:hover {
 ========================= */
 
 .nav-controls {
+
     display: flex;
+
     align-items: center;
 
     gap: 10px;
+}
+
+
+/* =========================
+   MENU TOGGLE
+========================= */
+
+#menu-toggle {
+
+    background: transparent;
+
+    border: none;
+
+    color: var(--text);
+
+    font-size: 24px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+#music-toggle {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    width: 58px;
+    height: 34px;
+
+    background: transparent;
+
+    border: 1px solid var(--border);
+
+    border-radius: 999px;
+
+    color: var(--muted);
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+#music-toggle:hover {
+
+    color: var(--accent);
+
+    border-color: var(--accent);
+
+    transform: translateY(-2px);
+}
+
+#music-toggle.playing {
+
+    color: var(--accent);
+
+    border-color: var(--accent);
+}
+
+.music-icon {
+
+    font-size: 15px;
+
+    line-height: 1;
+}
+
+.equalizer {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 2px;
+
+    height: 16px;
+}
+
+.equalizer i {
+
+    display: block;
+
+    width: 2px;
+
+    height: 5px;
+
+    background: currentColor;
+
+    border-radius: 2px;
+
+    animation:
+        equalizer 0.8s ease-in-out infinite alternate;
+
+    animation-play-state: paused;
+}
+
+.equalizer i:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.equalizer i:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.equalizer i:nth-child(3) {
+    animation-delay: 0.1s;
+}
+
+#music-toggle.playing .equalizer i {
+    animation-play-state: running;
+}
+
+@keyframes equalizer {
+
+    0% {
+        height: 4px;
+    }
+
+    100% {
+        height: 15px;
+    }
 }
 
 
@@ -317,6 +349,14 @@ nav a:hover {
 ========================= */
 
 .nav-menu {
+
+    /*
+     * FIXED juga.
+     *
+     * Jadi panel tidak mengikuti
+     * gerakan halaman ketika scroll.
+     */
+
     position: fixed;
 
     top: 0;
@@ -330,6 +370,7 @@ nav a:hover {
     padding: 100px 30px 30px;
 
     display: flex;
+
     flex-direction: column;
 
     gap: 0;
@@ -343,6 +384,12 @@ nav a:hover {
     transition:
         transform 0.3s ease;
 
+    /*
+     * Lebih tinggi dari navbar.
+     * Jadi ketika menu dibuka,
+     * panel berada di atas navbar.
+     */
+
     z-index: 1100;
 }
 
@@ -351,6 +398,7 @@ nav a:hover {
 }
 
 .nav-menu a {
+
     padding: 16px 0;
 
     color: var(--text);
@@ -367,6 +415,7 @@ nav a:hover {
 }
 
 .nav-menu a:hover {
+
     color: var(--accent);
 
     padding-left: 8px;
@@ -378,9 +427,11 @@ nav a:hover {
 ========================= */
 
 #menu-close {
+
     align-self: flex-end;
 
     background: transparent;
+
     border: none;
 
     color: var(--text);
@@ -402,11 +453,19 @@ nav a:hover {
 ========================= */
 
 main {
+
     max-width: 1100px;
 
     margin: auto;
 
-    padding: 0 30px;
+    /*
+     * Karena header sekarang fixed,
+     * beri ruang agar hero tidak
+     * ketutup navbar.
+     */
+
+    padding:
+        70px 30px 0;
 }
 
 
@@ -415,18 +474,22 @@ main {
 ========================= */
 
 #hero {
+
     min-height: 85vh;
 
     display: flex;
+
     align-items: center;
 }
 
 .hero-content {
+
     width: 100%;
 
     display: grid;
 
-    grid-template-columns: 1fr 300px;
+    grid-template-columns:
+        1fr 300px;
 
     align-items: center;
 
@@ -438,6 +501,7 @@ main {
 }
 
 #hero .eyebrow {
+
     color: var(--accent);
 
     font-size: 18px;
@@ -446,7 +510,9 @@ main {
 }
 
 #hero h1 {
-    font-size: clamp(48px, 7vw, 80px);
+
+    font-size:
+        clamp(48px, 7vw, 80px);
 
     line-height: 1.05;
 
@@ -454,6 +520,7 @@ main {
 }
 
 #hero h2 {
+
     color: var(--muted);
 
     font-size: 25px;
@@ -464,6 +531,7 @@ main {
 }
 
 .hero-description {
+
     max-width: 600px;
 
     color: var(--muted);
@@ -474,6 +542,7 @@ main {
 }
 
 .hero-buttons {
+
     display: flex;
 
     gap: 12px;
@@ -482,9 +551,11 @@ main {
 }
 
 .hero-buttons a {
+
     padding: 10px 18px;
 
     border: 1px solid var(--border);
+
     border-radius: 8px;
 
     color: var(--text);
@@ -495,6 +566,7 @@ main {
 }
 
 .hero-buttons a:hover {
+
     border-color: var(--accent);
 
     color: var(--accent);
@@ -503,13 +575,16 @@ main {
 }
 
 .hero-image {
+
     display: flex;
 
     justify-content: center;
 }
 
 .hero-image img {
+
     width: 260px;
+
     height: 260px;
 
     object-fit: cover;
@@ -532,7 +607,9 @@ section {
 }
 
 section > h2 {
+
     display: flex;
+
     align-items: center;
 
     gap: 15px;
@@ -545,9 +622,11 @@ section > h2 {
 }
 
 section > h2::before {
+
     content: "";
 
     width: 40px;
+
     height: 2px;
 
     background: var(--accent);
@@ -559,6 +638,7 @@ section > h2::before {
 ========================= */
 
 #about p {
+
     max-width: 800px;
 
     margin-bottom: 15px;
@@ -572,6 +652,7 @@ section > h2::before {
 ========================= */
 
 .project-list {
+
     display: grid;
 
     grid-template-columns:
@@ -586,11 +667,13 @@ section > h2::before {
 ========================= */
 
 .project-card {
+
     overflow: hidden;
 
     background: var(--card);
 
     border: 1px solid var(--border);
+
     border-radius: 14px;
 
     box-shadow:
@@ -608,15 +691,18 @@ section > h2::before {
 ========================= */
 
 .project-image {
+
     position: relative;
 
     overflow: hidden;
 }
 
 .project-image img {
+
     display: block;
 
     width: 100%;
+
     height: 220px;
 
     object-fit: cover;
@@ -626,6 +712,7 @@ section > h2::before {
 }
 
 .project-card:hover {
+
     transform: translateY(-6px);
 
     border-color: var(--accent);
@@ -635,6 +722,7 @@ section > h2::before {
 }
 
 .project-image::after {
+
     content: "";
 
     position: absolute;
@@ -654,7 +742,9 @@ section > h2::before {
         opacity 0.3s ease;
 }
 
-.project-card:hover .project-image::after {
+.project-card:hover
+.project-image::after {
+
     opacity: 0.9;
 }
 
@@ -668,12 +758,14 @@ section > h2::before {
 }
 
 .project-content h3 {
+
     margin-bottom: 10px;
 
     font-size: 22px;
 }
 
 .project-content p {
+
     color: var(--muted);
 
     margin-bottom: 15px;
@@ -685,6 +777,7 @@ section > h2::before {
 ========================= */
 
 .project-tags {
+
     display: flex;
 
     flex-wrap: wrap;
@@ -695,6 +788,7 @@ section > h2::before {
 }
 
 .project-tags span {
+
     padding: 5px 10px;
 
     border: 1px solid var(--border);
@@ -712,6 +806,7 @@ section > h2::before {
 ========================= */
 
 .project-content a {
+
     display: inline-block;
 
     color: var(--accent);
@@ -723,7 +818,9 @@ section > h2::before {
 }
 
 .project-content a:hover {
-    transform: translateX(5px);
+
+    transform:
+        translateX(5px);
 }
 
 
@@ -732,6 +829,7 @@ section > h2::before {
 ========================= */
 
 .Technologies-list {
+
     display: flex;
 
     flex-wrap: wrap;
@@ -740,7 +838,9 @@ section > h2::before {
 }
 
 .Technologies-list span {
+
     display: inline-flex;
+
     align-items: center;
 
     gap: 8px;
@@ -756,21 +856,26 @@ section > h2::before {
     color: #c9ced6;
 
     font-size: 14px;
+
     font-weight: 500;
 
     transition: 0.2s;
 }
 
 .Technologies-list span:hover {
+
     color: var(--accent);
 
     border-color: var(--accent);
 
-    transform: translateY(-2px);
+    transform:
+        translateY(-2px);
 }
 
 .Technologies-list img {
+
     width: 20px;
+
     height: 20px;
 
     object-fit: contain;
@@ -782,6 +887,7 @@ section > h2::before {
 ========================= */
 
 .contact-links {
+
     display: flex;
 
     flex-wrap: wrap;
@@ -790,7 +896,9 @@ section > h2::before {
 }
 
 .contact-links span {
+
     display: inline-flex;
+
     align-items: center;
 
     gap: 8px;
@@ -806,31 +914,38 @@ section > h2::before {
     color: #c9ced6;
 
     font-size: 14px;
+
     font-weight: 500;
 
     transition: 0.2s;
 }
 
 .contact-links span:hover {
+
     color: var(--text);
 
     border-color: var(--accent);
 
-    transform: translateY(-2px);
+    transform:
+        translateY(-2px);
 }
 
 .contact-links a {
+
     color: var(--text);
 
     text-decoration: none;
 }
 
 .contact-links a:hover {
+
     color: var(--accent);
 }
 
 .contact-links img {
+
     width: 20px;
+
     height: 20px;
 
     object-fit: contain;
@@ -842,22 +957,27 @@ section > h2::before {
 ========================= */
 
 footer {
+
     margin-top: 50px;
 
-    padding: 50px 30px 30px;
+    padding:
+        50px 30px 30px;
 
-    border-top: 1px solid var(--border);
+    border-top:
+        1px solid var(--border);
 
     text-align: center;
 }
 
 .footer-content {
+
     max-width: 1100px;
 
     margin: auto;
 }
 
 .footer-content h3 {
+
     color: var(--text);
 
     font-size: 20px;
@@ -866,6 +986,7 @@ footer {
 }
 
 .footer-tagline {
+
     color: var(--muted);
 
     font-size: 14px;
@@ -874,6 +995,7 @@ footer {
 }
 
 .footer-links {
+
     display: flex;
 
     justify-content: center;
@@ -884,6 +1006,7 @@ footer {
 }
 
 .footer-links a {
+
     color: var(--muted);
 
     text-decoration: none;
@@ -892,10 +1015,12 @@ footer {
 }
 
 .footer-links a:hover {
+
     color: var(--accent);
 }
 
 .footer-copyright {
+
     color: var(--muted);
 
     font-size: 13px;
@@ -903,45 +1028,49 @@ footer {
 
 
 /* =========================
-   DESKTOP-STYLE MOBILE
+   MOBILE
 ========================= */
 
 @media (max-width: 700px) {
 
-    /* NAVBAR */
-
     nav {
-        padding: 14px 12px;
+
+        padding:
+            14px 12px;
     }
 
     nav h2 {
+
         font-size: 18px;
     }
 
     nav a {
+
         font-size:
             clamp(10px, 2.7vw, 13px);
     }
 
-
-    /* MUSIC */
-
     #music-toggle {
+
         width: 42px;
+
         height: 28px;
 
         gap: 3px;
     }
 
     .music-icon {
+
         font-size: 12px;
     }
 
     .equalizer {
+
         height: 13px;
     }
 
     .equalizer i {
+
         width: 2px;
     }
 
@@ -949,19 +1078,22 @@ footer {
     /* MAIN */
 
     main {
+
         width: 100%;
+
         max-width: 1100px;
 
         margin: auto;
 
         padding:
-            0 clamp(12px, 3vw, 20px);
+            65px clamp(12px, 3vw, 20px) 0;
     }
 
 
     /* HERO */
 
     .hero-content {
+
         grid-template-columns:
             minmax(0, 1fr)
             clamp(110px, 28vw, 180px);
@@ -973,6 +1105,7 @@ footer {
     }
 
     .hero-text {
+
         min-width: 0;
 
         margin: 0;
@@ -981,17 +1114,21 @@ footer {
     }
 
     .hero-image {
+
         order: 0;
     }
 
     .hero-image img {
+
         width: 100%;
+
         height: auto;
 
         aspect-ratio: 1;
     }
 
     #hero h1 {
+
         font-size:
             clamp(24px, 6vw, 42px);
 
@@ -999,23 +1136,28 @@ footer {
     }
 
     #hero h2 {
+
         font-size:
             clamp(14px, 3.5vw, 20px);
     }
 
     .hero-description {
+
         font-size:
             clamp(12px, 2.8vw, 16px);
     }
 
     .hero-buttons {
+
         justify-content: flex-start;
 
         gap: 8px;
     }
 
     .hero-buttons a {
-        padding: 8px 10px;
+
+        padding:
+            8px 10px;
 
         font-size: 12px;
     }
@@ -1024,10 +1166,12 @@ footer {
     /* SECTION */
 
     section {
+
         padding: 70px 0;
     }
 
     section > h2 {
+
         font-size:
             clamp(24px, 6vw, 32px);
 
@@ -1038,6 +1182,7 @@ footer {
     /* PROJECT */
 
     .project-list {
+
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
 
@@ -1046,7 +1191,9 @@ footer {
     }
 
     .project-image img {
+
         width: 100%;
+
         height: auto;
 
         aspect-ratio: 1.8 / 1;
@@ -1055,21 +1202,25 @@ footer {
     }
 
     .project-content {
+
         padding:
             clamp(10px, 3vw, 25px);
     }
 
     .project-content h3 {
+
         font-size:
             clamp(14px, 4vw, 22px);
     }
 
     .project-content p {
+
         font-size:
             clamp(11px, 2.8vw, 16px);
     }
 
     .project-tags {
+
         gap: 4px;
 
         margin-bottom:
@@ -1077,13 +1228,16 @@ footer {
     }
 
     .project-tags span {
-        padding: 3px 6px;
+
+        padding:
+            3px 6px;
 
         font-size:
             clamp(9px, 2.2vw, 12px);
     }
 
     .project-content a {
+
         font-size:
             clamp(10px, 2.5vw, 16px);
     }
@@ -1092,19 +1246,23 @@ footer {
     /* TECHNOLOGIES */
 
     .Technologies-list {
+
         gap: 8px;
     }
 
     .Technologies-list span {
+
         gap: 6px;
 
-        padding: 7px 10px;
+        padding:
+            7px 10px;
 
         font-size:
             clamp(11px, 3vw, 14px);
     }
 
     .Technologies-list img {
+
         width:
             clamp(16px, 5vw, 20px);
 
@@ -1116,19 +1274,23 @@ footer {
     /* CONTACT */
 
     .contact-links {
+
         gap: 8px;
     }
 
     .contact-links span {
+
         gap: 6px;
 
-        padding: 7px 10px;
+        padding:
+            7px 10px;
 
         font-size:
             clamp(11px, 3vw, 14px);
     }
 
     .contact-links img {
+
         width:
             clamp(16px, 5vw, 20px);
 
@@ -1140,10 +1302,13 @@ footer {
     /* FOOTER */
 
     footer {
-        padding: 40px 15px 25px;
+
+        padding:
+            40px 15px 25px;
     }
 
     .footer-links {
+
         gap: 15px;
 
         flex-wrap: wrap;
@@ -1153,8 +1318,18 @@ footer {
     /* SIDE MENU */
 
     .nav-menu {
+
         width: 280px;
+
         max-width: 85vw;
+
+        height: 100vh;
+
+        position: fixed;
+
+        top: 0;
+
+        right: 0;
     }
 }
 
@@ -1164,11 +1339,13 @@ footer {
 ========================= */
 
 .hero-text {
+
     animation:
         heroText 0.8s ease forwards;
 }
 
 .hero-image {
+
     animation:
         heroImage 0.8s ease 0.15s forwards;
 
@@ -1178,6 +1355,7 @@ footer {
 @keyframes heroText {
 
     from {
+
         opacity: 0;
 
         transform:
@@ -1185,6 +1363,7 @@ footer {
     }
 
     to {
+
         opacity: 1;
 
         transform:
@@ -1195,6 +1374,7 @@ footer {
 @keyframes heroImage {
 
     from {
+
         opacity: 0;
 
         transform:
@@ -1202,6 +1382,7 @@ footer {
     }
 
     to {
+
         opacity: 1;
 
         transform:
@@ -1211,10 +1392,11 @@ footer {
 
 
 /* =========================
-   SCROLL ANIMATION - SECTIONS
+   SCROLL ANIMATION
 ========================= */
 
 .reveal-section {
+
     opacity: 0;
 
     transform:
@@ -1226,6 +1408,7 @@ footer {
 }
 
 .reveal-section.show {
+
     opacity: 1;
 
     transform:
@@ -1234,10 +1417,11 @@ footer {
 
 
 /* =========================
-   SCROLL ANIMATION - PROJECT
+   PROJECT SCROLL ANIMATION
 ========================= */
 
 .project-card {
+
     opacity: 0;
 
     transform:
@@ -1250,6 +1434,7 @@ footer {
 }
 
 .project-card.show {
+
     opacity: 1;
 
     transform:
@@ -1257,20 +1442,22 @@ footer {
 }
 
 .project-card.show:hover {
+
     transform:
         translateY(-6px);
 
-    border-color: var(--accent);
+    border-color:
+        var(--accent);
 }
 
 
 /* =========================
-   SCROLL ANIMATION
    TECHNOLOGIES & CONTACT
 ========================= */
 
 .Technologies-list span,
 .contact-links span {
+
     opacity: 0;
 
     transform:
@@ -1283,6 +1470,7 @@ footer {
 
 .Technologies-list span.show,
 .contact-links span.show {
+
     opacity: 1;
 
     transform:
@@ -1291,7 +1479,7 @@ footer {
 
 
 /* =========================
-   DELAY - TECHNOLOGIES
+   TECHNOLOGIES DELAY
 ========================= */
 
 .Technologies-list span:nth-child(1) {
@@ -1324,7 +1512,7 @@ footer {
 
 
 /* =========================
-   DELAY - CONTACT
+   CONTACT DELAY
 ========================= */
 
 .contact-links span:nth-child(1) {
