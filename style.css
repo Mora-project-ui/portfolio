@@ -243,6 +243,16 @@ nav h2 {
     color: var(--accent);
 }
 
+nav a {
+    color: var(--text);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
 .nav-controls {
     display: flex;
     align-items: center;
