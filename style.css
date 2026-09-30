@@ -249,11 +249,33 @@ nav div {
 }
 
 .nav-menu {
-    display: none;
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    width: 280px;
+    height: 100vh;
+
+    padding: 100px 30px 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    background: rgba(13, 15, 18, 0.97);
+
+    border-left: 1px solid var(--border);
+
+    transform: translateX(100%);
+
+    transition: transform 0.3s ease;
+
+    z-index: 999;
 }
 
 .nav-menu.open {
-    display: flex;
+    transform: translateX(0);
 }
 
 nav a {
