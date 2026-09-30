@@ -55,11 +55,18 @@ musicToggle.addEventListener("click", () => {
 });
 
 const menuToggle = document.querySelector("#menu-toggle");
+const menuClose = document.querySelector("#menu-close");
 const navMenu = document.querySelector(".nav-menu");
 
 menuToggle.addEventListener("click", () => {
 
-    navMenu.classList.toggle("open");
+    navMenu.classList.add("open");
+
+});
+
+menuClose.addEventListener("click", () => {
+
+    navMenu.classList.remove("open");
 
 });
 
