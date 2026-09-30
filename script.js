@@ -87,6 +87,9 @@ menuToggle.addEventListener("click", () => {
 
     navMenu.classList.add("open");
 
+    navMenu.style.transform =
+        "translateX(0) translateY(0)";
+
 });
 
 
@@ -95,7 +98,7 @@ menuClose.addEventListener("click", () => {
 
     navMenu.classList.remove("open");
 
-    navMenu.style.top = "0px";
+    navMenu.style.transform = "";
 
 });
 
@@ -110,8 +113,8 @@ window.addEventListener("scroll", () => {
     const scrollDifference =
         window.scrollY - menuOpenScroll;
 
-    navMenu.style.top =
-        `${-scrollDifference}px`;
+    navMenu.style.transform =
+        `translateX(0) translateY(${-scrollDifference}px)`;
 
 });
 
