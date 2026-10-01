@@ -1,5 +1,5 @@
-<h1 align="center">Halo 👋, Saya Mohammad Rama al-jannah</h1>
-<h3 align="center">Ini adalah website portofolio pertama saya</h3>
+<h1 align="center">Halo 👋, I`m Mohammad Rama al-jannah</h1>
+<h3 align="center">This portfolio is a personal learning project. I'm still learning web development, and I share my source code so others can explore, learn, and build their own projects.</h3>
 
 [Website portofolio saya](https://mora-project-ui.github.io/portfolio/)
 
