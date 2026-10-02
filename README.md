@@ -5,3 +5,5 @@
 
 # 🌌 Preview my portfolio
 ![Preview](https://raw.githubusercontent.com/Mora-project-ui/portfolio/refs/heads/main/assets/images/preview.png)
+
+Ini khusus belajar 
