@@ -4,6 +4,4 @@
 [Website portofolio saya](https://mora-project-ui.github.io/portfolio/)
 
 # 🌌 Preview my portfolio
-![Preview](https://raw.githubusercontent.com/Mora-project-ui/portfolio/refs/heads/main/assets/images/preview.png)
-
-Ini khusus belajar 
+![Preview](https://raw.githubusercontent.com/Mora-project-ui/portfolio/refs/heads/main/assets/images/Preview%20v2.png)
