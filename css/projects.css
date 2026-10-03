@@ -1,4 +1,13 @@
 /* =========================
+   PROJECT SECTION
+========================= */
+
+#projects {
+    padding: 100px 0;
+}
+
+
+/* =========================
    PROJECT LIST
 ========================= */
 
@@ -42,22 +51,16 @@
         box-shadow 0.3s ease;
 }
 
+
+/* =========================
+   PROJECT CARD - SHOW
+========================= */
+
 .project-card.show {
     opacity: 1;
 
     transform:
         translateY(0);
-}
-
-.project-card.show:hover {
-    transform:
-        translateY(-6px);
-
-    border-color:
-        var(--accent);
-
-    box-shadow:
-        0 18px 40px rgba(0, 0, 0, 0.30);
 }
 
 
@@ -83,6 +86,27 @@
         transform 0.4s ease;
 }
 
+
+/* =========================
+   PROJECT HOVER
+========================= */
+
+.project-card:hover {
+    transform:
+        translateY(-6px);
+
+    border-color:
+        var(--accent);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.30);
+}
+
+
+/* =========================
+   PROJECT IMAGE OVERLAY
+========================= */
+
 .project-image::after {
     content: "";
 
@@ -103,7 +127,8 @@
         opacity 0.3s ease;
 }
 
-.project-card:hover .project-image::after {
+.project-card:hover
+.project-image::after {
     opacity: 0.9;
 }
 
