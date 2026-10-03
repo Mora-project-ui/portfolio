@@ -16,7 +16,11 @@
         type="image/png"
     >
 
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
 
     <title>Mohammad Rama al-jannah</title>
 
@@ -37,12 +41,9 @@
 
         <nav>
 
-            <a href="https://mora-project-ui.github.io/portfolio/">
+            <a href="../index.html">
                 <h2>Mora-project-ui</h2>
             </a>
-
-
-            <!-- Navigation Controls -->
 
             <div class="nav-controls">
 
@@ -52,7 +53,6 @@
                 >
                     ☰
                 </button>
-
 
                 <button
                     id="music-toggle"
@@ -72,8 +72,6 @@
             </div>
 
 
-            <!-- Side Navigation -->
-
             <div class="nav-menu">
 
                 <button
@@ -83,24 +81,26 @@
                     ✕
                 </button>
 
-
-                <a href="#about">
+                <a href="pages/about.html">
                     About
                 </a>
 
-                <a href="#projects">
+                <a href="pages/projects.html">
                     Projects
                 </a>
 
-                <a href="#Technologies">
+                <a href="pages/technologies.html">
                     Technologies
                 </a>
 
-                <a href="#contact">
+                <a href="pages/contact.html">
                     Contact
                 </a>
 
-                <a href="https://github.com/Mora-project-ui/portfolio">
+                <a
+                    href="https://github.com/Mora-project-ui/portfolio"
+                    target="_blank"
+                >
                     Web Repository
                 </a>
 
@@ -118,7 +118,7 @@
     <audio id="background-music" loop>
 
         <source
-            src="./assets/Backsound/BrunoMars-The-Lazy-Song.mp3"
+            src="assets/Backsound/BrunoMars-The-Lazy-Song.mp3"
             type="audio/mpeg"
         >
 
@@ -131,17 +131,9 @@
 
     <main>
 
-
-        <!-- =========================
-             HERO
-        ========================== -->
-
         <section id="hero">
 
             <div class="hero-content">
-
-
-                <!-- Hero Text -->
 
                 <div class="hero-text">
 
@@ -149,22 +141,18 @@
                         Hello, I'm
                     </p>
 
-
                     <h1>
                         Mohammad Rama
                     </h1>
-
 
                     <h2>
                         Linux tinkerer & project builder
                     </h2>
 
-
                     <p class="hero-description">
                         Experimenting with Linux, web development,
                         Android and personal projects.
                     </p>
-
 
                     <div class="hero-buttons">
 
@@ -175,8 +163,7 @@
                             GitHub
                         </a>
 
-
-                        <a href="#projects">
+                        <a href="pages/projects.html">
                             Explore Projects
                         </a>
 
@@ -185,420 +172,14 @@
                 </div>
 
 
-                <!-- Hero Image -->
-
                 <div class="hero-image">
 
                     <img
-                        src="./assets/RAMA-BLACK-STYLE.jpg"
+                        src="assets/RAMA-BLACK-STYLE.jpg"
                         alt="Mohammad Rama"
                     >
 
                 </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             ABOUT
-        ========================== -->
-
-        <section
-            id="about"
-            class="reveal-section"
-        >
-
-            <h2>
-                About Me
-            </h2>
-
-
-            <p>
-                I'm a beginner developer who enjoys exploring Linux,
-                shell scripting, GitHub, Android development and web development.
-            </p>
-
-
-            <p>
-                I like learning by building projects, experimenting with
-                different technologies and understanding how things work.
-            </p>
-
-        </section>
-
-
-        <!-- =========================
-             PROJECTS
-        ========================== -->
-
-        <section
-            id="projects"
-            class="reveal-section"
-        >
-
-            <h2>
-                Projects
-            </h2>
-
-
-            <div class="project-list">
-
-
-                <!-- Project 1 -->
-
-                <article class="project-card">
-
-                    <div class="project-image">
-
-                        <img
-                            src="https://raw.githubusercontent.com/Mora-project-ui/fantasi-grub-theme/refs/heads/main/preview.png"
-                            alt="Fantasi GRUB Theme"
-                        >
-
-                    </div>
-
-
-                    <div class="project-content">
-
-                        <h3>
-                            Fantasi Grub Theme
-                        </h3>
-
-
-                        <p>
-                            GRUB customization project for Linux systems.
-                        </p>
-
-
-                        <div class="project-tags">
-
-                            <span>
-                                Linux
-                            </span>
-
-                            <span>
-                                GRUB
-                            </span>
-
-                            <span>
-                                Shell
-                            </span>
-
-                            <span>
-                                Private project
-                            </span>
-
-                        </div>
-
-
-                        <a
-                            href="https://github.com/Mora-project-ui/fantasi-grub-theme/tree/main"
-                            target="_blank"
-                        >
-                            View project →
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- Project 2 -->
-
-                <article class="project-card">
-
-                    <div class="project-image">
-
-                        <img
-                            src="https://raw.githubusercontent.com/Mora-project-ui/fantasi-grub-theme/refs/heads/main/preview.png"
-                            alt="Mora App"
-                        >
-
-                    </div>
-
-
-                    <div class="project-content">
-
-                        <h3>
-                            Mora App
-                        </h3>
-
-
-                        <p>
-                            A private Android application project that I'm
-                            currently learning and developing with Kotlin.
-                        </p>
-
-
-                        <div class="project-tags">
-
-                            <span>
-                                Linux
-                            </span>
-
-                            <span>
-                                Android
-                            </span>
-
-                            <span>
-                                Shell
-                            </span>
-
-                            <span>
-                                Private project
-                            </span>
-
-                        </div>
-
-
-                        <a
-                            href="https://github.com/Mora-project-ui/fantasi-grub-theme/tree/main"
-                            target="_blank"
-                        >
-                            View project →
-                        </a>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             TECHNOLOGIES
-        ========================== -->
-
-        <section
-            id="Technologies"
-            class="reveal-section"
-        >
-
-            <h2>
-                Technologies
-            </h2>
-
-
-            <div class="Technologies-list">
-
-
-                <span>
-
-                    <img
-                        src="./assets/icons/Operatingsystem/linux.svg"
-                        alt="Linux"
-                    >
-
-                    Linux
-
-                </span>
-
-
-                <span>
-
-                    <img
-                        src="https://raw.githubusercontent.com/Mora-project-ui/portfolio/refs/heads/main/assets/icons/FrontendDevelopment/vscode.svg"
-                        alt="VS Code"
-                    >
-
-                    VS Code
-
-                </span>
-
-
-                <span>
-
-                    <img
-                        src="https://raw.githubusercontent.com/Mora-project-ui/Mora-project-ui/refs/heads/main/Icons/Other/git.svg"
-                        alt="Git"
-                    >
-
-                    Git
-
-                </span>
-
-
-                <span>
-
-                    <img
-                        src="https://raw.githubusercontent.com/Mora-project-ui/Mora-project-ui/refs/heads/main/Icons/MobileAppDevelopment/kotlin.svg"
-                        alt="Kotlin"
-                    >
-
-                    Kotlin
-
-                </span>
-
-
-                <span>
-
-                    <img
-                        src="https://raw.githubusercontent.com/Mora-project-ui/Mora-project-ui/refs/heads/main/Icons/MobileAppDevelopment/android.svg"
-                        alt="Android"
-                    >
-
-                    Android Development
-
-                </span>
-
-
-                <span>
-
-                    <img
-                        src="https://raw.githubusercontent.com/Mora-project-ui/Mora-project-ui/refs/heads/main/Icons/FrontendDevelopment/html.svg"
-                        alt="HTML"
-                    >
-
-                    HTML
-
-                </span>
-
-
-                <span>
-
-                    <img
-                        src="https://raw.githubusercontent.com/Mora-project-ui/portfolio/refs/heads/main/assets/icons/FrontendDevelopment/css3.svg"
-                        alt="CSS"
-                    >
-
-                    CSS
-
-                </span>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             CONTACT
-        ========================== -->
-
-        <section
-            id="contact"
-            class="reveal-section"
-        >
-
-            <h2>
-                Contact
-            </h2>
-
-
-            <p>
-                You can find me on:
-            </p>
-
-
-            <div class="contact-links">
-
-
-                <!-- WhatsApp -->
-
-                <span>
-
-                    <a
-                        href="https://wa.me/6281553766601?text=Assalamualaikum"
-                        target="_blank"
-                    >
-
-                        <img
-                            src="https://raw.githubusercontent.com/Mora-project-ui/Mora-project-ui/refs/heads/main/Icons/Social/whatsapp.svg"
-                            alt="WhatsApp"
-                        >
-
-                        WhatsApp
-
-                    </a>
-
-                </span>
-
-
-                <!-- Instagram -->
-
-                <span>
-
-                    <a
-                        href="https://instagram.com/mhmdramaaa._"
-                        target="_blank"
-                    >
-
-                        <img
-                            src="https://raw.githubusercontent.com/Mora-project-ui/Mora-project-ui/refs/heads/main/Icons/Social/instagram.svg"
-                            alt="Instagram"
-                        >
-
-                        Instagram
-
-                    </a>
-
-                </span>
-
-
-                <!-- YouTube -->
-
-                <span>
-
-                    <a
-                        href="https://www.youtube.com/@ramabws"
-                        target="_blank"
-                    >
-
-                        <img
-                            src="https://raw.githubusercontent.com/Mora-project-ui/Mora-project-ui/refs/heads/main/Icons/Social/youtube.svg"
-                            alt="YouTube"
-                        >
-
-                        YouTube
-
-                    </a>
-
-                </span>
-
-
-                <!-- GitHub -->
-
-                <span>
-
-                    <a
-                        href="https://github.com/Mora-project-ui"
-                        target="_blank"
-                    >
-
-                        <img
-                            src="https://raw.githubusercontent.com/Mora-project-ui/Mora-project-ui/refs/heads/main/Icons/Social/github.svg"
-                            alt="GitHub"
-                        >
-
-                        GitHub
-
-                    </a>
-
-                </span>
-
-
-                <!-- Lynk -->
-
-                <span>
-
-                    <a
-                        href="https://lynk.id/ramlvoe"
-                        target="_blank"
-                    >
-
-                        <img
-                            src="https://raw.githubusercontent.com/Mora-project-ui/Mora-project-ui/refs/heads/main/Icons/Other/lynk%2Cid.svg"
-                            alt="Lynk,ID"
-                        >
-
-                        Lynk,ID
-
-                    </a>
-
-                </span>
 
             </div>
 
@@ -619,11 +200,9 @@
                 Mora-project-ui
             </h3>
 
-
             <p class="footer-tagline">
                 Building • Learning • Experimenting
             </p>
-
 
             <div class="footer-links">
 
@@ -634,14 +213,12 @@
                     GitHub
                 </a>
 
-
                 <a
                     href="https://www.youtube.com/@ramabws"
                     target="_blank"
                 >
                     YouTube
                 </a>
-
 
                 <a
                     href="https://lynk.id/ramlvoe"
@@ -652,7 +229,6 @@
 
             </div>
 
-
             <p class="footer-copyright">
                 © 2026 Mohammad Rama al-jannah
             </p>
@@ -662,11 +238,7 @@
     </footer>
 
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
-
-    <script src="./script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 
