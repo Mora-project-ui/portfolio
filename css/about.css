@@ -1,0 +1,34 @@
+/* =========================
+   ABOUT
+========================= */
+
+#about p {
+    max-width: 800px;
+
+    margin-bottom: 15px;
+
+    color: #b7bdc8;
+}
+
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+.reveal-section {
+    opacity: 0;
+
+    transform:
+        translateY(40px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal-section.show {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
