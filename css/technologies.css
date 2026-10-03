@@ -46,12 +46,22 @@
         border-color 0.2s ease;
 }
 
+
+/* =========================
+   TECHNOLOGIES - SHOW
+========================= */
+
 .Technologies-list span.show {
     opacity: 1;
 
     transform:
         translateY(0);
 }
+
+
+/* =========================
+   TECHNOLOGIES HOVER
+========================= */
 
 .Technologies-list span:hover {
     color: var(--accent);
@@ -62,9 +72,19 @@
     transform:
         translateY(-2px);
 
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+
     transition-delay:
         0s;
 }
+
+
+/* =========================
+   TECHNOLOGIES ICON
+========================= */
 
 .Technologies-list img {
     width: 20px;
