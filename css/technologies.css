@@ -34,34 +34,8 @@
 
     font-weight: 500;
 
-    opacity: 0;
-
-    transform:
-        translateY(30px);
-
-    transition:
-        opacity 0.6s ease,
-        transform 0.6s ease,
-        color 0.2s ease,
-        border-color 0.2s ease;
+    transition: 0.2s;
 }
-
-
-/* =========================
-   TECHNOLOGIES - SHOW
-========================= */
-
-.Technologies-list span.show {
-    opacity: 1;
-
-    transform:
-        translateY(0);
-}
-
-
-/* =========================
-   TECHNOLOGIES HOVER
-========================= */
 
 .Technologies-list span:hover {
     color: var(--accent);
@@ -71,57 +45,11 @@
 
     transform:
         translateY(-2px);
-
-    transition:
-        color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
-
-    transition-delay:
-        0s;
 }
-
-
-/* =========================
-   TECHNOLOGIES ICON
-========================= */
 
 .Technologies-list img {
     width: 20px;
     height: 20px;
 
     object-fit: contain;
-}
-
-
-/* =========================
-   DELAY
-========================= */
-
-.Technologies-list span:nth-child(1) {
-    transition-delay: 0.2s;
-}
-
-.Technologies-list span:nth-child(2) {
-    transition-delay: 0.4s;
-}
-
-.Technologies-list span:nth-child(3) {
-    transition-delay: 0.6s;
-}
-
-.Technologies-list span:nth-child(4) {
-    transition-delay: 0.8s;
-}
-
-.Technologies-list span:nth-child(5) {
-    transition-delay: 1s;
-}
-
-.Technologies-list span:nth-child(6) {
-    transition-delay: 1.2s;
-}
-
-.Technologies-list span:nth-child(7) {
-    transition-delay: 1.4s;
 }
