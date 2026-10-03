@@ -34,7 +34,23 @@
 
     font-weight: 500;
 
-    transition: 0.2s;
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.Technologies-list span.show {
+    opacity: 1;
+
+    transform:
+        translateY(0);
 }
 
 .Technologies-list span:hover {
@@ -45,6 +61,8 @@
 
     transform:
         translateY(-2px);
+
+    transition-delay: 0s;
 }
 
 .Technologies-list img {
@@ -52,4 +70,37 @@
     height: 20px;
 
     object-fit: contain;
+}
+
+
+/* =========================
+   ANIMATION DELAY
+========================= */
+
+.Technologies-list span:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+.Technologies-list span:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+.Technologies-list span:nth-child(3) {
+    transition-delay: 0.6s;
+}
+
+.Technologies-list span:nth-child(4) {
+    transition-delay: 0.8s;
+}
+
+.Technologies-list span:nth-child(5) {
+    transition-delay: 1s;
+}
+
+.Technologies-list span:nth-child(6) {
+    transition-delay: 1.2s;
+}
+
+.Technologies-list span:nth-child(7) {
+    transition-delay: 1.4s;
 }
