@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+        rel="icon"
+        href="https://raw.githubusercontent.com/Mora-project-ui/portfolio/refs/heads/main/assets/icons/favicon/x.png"
+        type="image/png"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <title>Mohammad Rama al-jannah</title>
+
+</head>
+
+
+<body>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <nav>
+
+            <a href="https://mora-project-ui.github.io/portfolio/">
+                <h2>Mora-project-ui</h2>
+            </a>
+
+            <div class="nav-controls">
+
+                <button
+                    id="menu-toggle"
+                    aria-label="Toggle navigation menu"
+                >
+                    ☰
+                </button>
+
+                <button
+                    id="music-toggle"
+                    aria-label="Toggle background music"
+                >
+
+                    <span class="music-icon">🎵</span>
+
+                    <span class="equalizer">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <div class="nav-menu">
+
+                <button
+                    id="menu-close"
+                    aria-label="Close navigation menu"
+                >
+                    ✕
+                </button>
+
+                <a href="pages/about.html">
+                    About
+                </a>
+
+                <a href="pages/projects.html">
+                    Projects
+                </a>
+
+                <a href="pages/technologies.html">
+                    Technologies
+                </a>
+
+                <a href="pages/contact.html">
+                    Contact
+                </a>
+
+                <a
+                    href="https://github.com/Mora-project-ui/portfolio"
+                    target="_blank"
+                >
+                    Web Repository
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         BACKGROUND MUSIC
+    ========================== -->
+
+    <audio id="background-music" loop>
+
+        <source
+            <!-- src="./assets/Backsound/DoubleTake.mp3" -->
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main>
+
+        <section id="hero">
+
+            <div class="hero-content">
+
+                <div class="hero-text">
+
+                    <p class="eyebrow">
+                        Hello, I'm
+                    </p>
+
+                    <h1>
+                        Mohammad Rama
+                    </h1>
+
+                    <h2>
+                        Linux tinkerer & project builder
+                    </h2>
+
+                    <p class="hero-description">
+                        I build small projects, experiment with Linux, and learn by figuring things out hands-on.
+                        My work ranges from system customization and browser extensions to web and Android projects.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="pages/about.html">
+                            About Me
+                        </a>
+
+                        <a href="pages/projects.html">
+                            My Projects
+                        </a>
+
+                        <a href="pages/technologies.html">
+                            My Tool
+                        </a>
+
+                       <a href="pages/contact.html">
+                            Contact
+                        </a>
+
+                        <a
+                            href="https://lynk.id/ramlvoe"
+                            target="_blank"
+                        >
+                            ShortCut
+                        </a>
+                        
+                    </div>
+
+                </div>
+
+
+                <div class="hero-image">
+
+                    <img
+                        src="assets/RAMA-BLACK-STYLE.jpg"
+                        alt="Mohammad Rama"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h3>
+                Mora-project-ui
+            </h3>
+
+            <p class="footer-tagline">
+                Building • Learning • Experimenting
+            </p>
+
+            <div class="footer-links">
+
+                <a
+                    href="https://github.com/Mora-project-ui"
+                    target="_blank"
+                >
+                    GitHub
+                </a>
+
+                <a
+                    href="https://www.youtube.com/@ramabws"
+                    target="_blank"
+                >
+                    YouTube
+                </a>
+
+                <a
+                    href="https://lynk.id/ramlvoe"
+                    target="_blank"
+                >
+                    Lynk,ID
+                </a>
+
+            </div>
+
+            <p class="footer-copyright">
+                © 2026 Mohammad Rama al-jannah
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
