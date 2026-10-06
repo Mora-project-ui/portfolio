@@ -1,0 +1,298 @@
+/* =========================
+   NAVBAR
+========================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: transparent;
+    border-bottom: 1px solid transparent;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+header.scrolled {
+    background: rgba(13, 15, 18, 0.72);
+    border-bottom-color: var(--border);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   NAV
+========================= */
+
+nav {
+    position: relative;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 18px 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+nav h2 {
+    color: var(--accent);
+}
+
+nav a {
+    color: var(--text);
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+
+/* =========================
+   NAV CONTROLS
+========================= */
+
+.nav-controls {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* =========================
+   MENU TOGGLE
+========================= */
+
+#menu-toggle {
+    background: transparent;
+
+    border: none;
+
+    color: var(--text);
+
+    font-size: 24px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+#music-toggle {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    width: 58px;
+    height: 34px;
+
+    background: transparent;
+
+    border: 1px solid var(--border);
+
+    border-radius: 999px;
+
+    color: var(--muted);
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+#music-toggle:hover {
+    color: var(--accent);
+
+    border-color: var(--accent);
+
+    transform:
+        translateY(-2px);
+}
+
+#music-toggle.playing {
+    color: var(--accent);
+
+    border-color: var(--accent);
+}
+
+.music-icon {
+    font-size: 15px;
+
+    line-height: 1;
+}
+
+.equalizer {
+    display: flex;
+
+    align-items: center;
+
+    gap: 2px;
+
+    height: 16px;
+}
+
+.equalizer i {
+    display: block;
+
+    width: 2px;
+    height: 5px;
+
+    background: currentColor;
+
+    border-radius: 2px;
+
+    animation:
+        equalizer 0.8s ease-in-out infinite alternate;
+
+    animation-play-state: paused;
+}
+
+.equalizer i:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.equalizer i:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.equalizer i:nth-child(3) {
+    animation-delay: 0.1s;
+}
+
+#music-toggle.playing .equalizer i {
+    animation-play-state: running;
+}
+
+@keyframes equalizer {
+
+    0% {
+        height: 4px;
+    }
+
+    100% {
+        height: 15px;
+    }
+}
+
+
+/* =========================
+   SIDE MENU
+========================= */
+
+.nav-menu {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 280px;
+
+    max-width: 85vw;
+
+    height: 100vh;
+    height: 100dvh;
+
+    padding:
+        100px 30px 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    background:
+        rgba(13, 15, 18, 0.97);
+
+    border-left:
+        1px solid var(--border);
+
+    transform:
+        translate3d(100%, 0, 0);
+
+    transition:
+        transform 0.3s ease;
+
+    z-index: 1100;
+
+    overflow-y: auto;
+
+    overscroll-behavior: contain;
+}
+
+.nav-menu.open {
+    transform:
+        translate3d(0, 0, 0);
+}
+
+.nav-menu a {
+    padding: 16px 0;
+
+    color: var(--text);
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    border-bottom:
+        1px solid var(--border);
+
+    transition:
+        color 0.2s ease,
+        padding-left 0.2s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--accent);
+
+    padding-left: 8px;
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+#menu-close {
+    align-self: flex-end;
+
+    background: transparent;
+
+    border: none;
+
+    color: var(--text);
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    margin-bottom: 20px;
+}
+
+#menu-close:hover {
+    color: var(--accent);
+}
